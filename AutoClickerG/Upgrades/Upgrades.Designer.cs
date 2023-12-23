@@ -28,7 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            upg0 = new Label();
             SuspendLayout();
+            // 
+            // upg0
+            // 
+            upg0.AutoSize = true;
+            upg0.Font = new Font("Bernard MT Condensed", 26.25F, FontStyle.Bold);
+            upg0.Location = new Point(402, 455);
+            upg0.Name = "upg0";
+            upg0.Size = new Size(188, 41);
+            upg0.TabIndex = 0;
+            upg0.Text = "Ulepszenie I";
             // 
             // Upgrades
             // 
@@ -36,11 +47,15 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Moccasin;
             ClientSize = new Size(1920, 1080);
+            Controls.Add(upg0);
             Name = "Upgrades";
             Text = "Upgrades";
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Label upg0;
     }
 }
