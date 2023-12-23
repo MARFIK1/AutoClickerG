@@ -40,15 +40,16 @@ namespace AutoClickerG
             ((System.ComponentModel.ISupportInitialize)CTEM).BeginInit();
             SuspendLayout();
             // 
-            // Coin
+            // CTEM
             // 
-            Coin.Image = Properties.Resources.Coin;
-            Coin.Location = new Point(470, 65);
-            Coin.Name = "Coin";
-            Coin.Size = new Size(144, 169);
-            Coin.SizeMode = PictureBoxSizeMode.CenterImage;
-            Coin.TabIndex = 0;
-            Coin.TabStop = false;
+            CTEM.Image = Properties.Resources.Coin;
+            CTEM.Location = new Point(872, 76);
+            CTEM.Name = "CTEM";
+            CTEM.Size = new Size(157, 158);
+            CTEM.SizeMode = PictureBoxSizeMode.CenterImage;
+            CTEM.TabIndex = 0;
+            CTEM.TabStop = false;
+            CTEM.Click += CTEM_Click;
             // 
             // CoinBalance
             // 
@@ -58,9 +59,29 @@ namespace AutoClickerG
             CoinBalance.Location = new Point(636, 237);
             CoinBalance.Name = "CoinBalance";
             CoinBalance.Size = new Size(273, 41);
-            CoinBalance.TabIndex = 2;
+            CoinBalance.TabIndex = 1;
             CoinBalance.Text = "Account Balance: ";
-            CoinBalance.Click += CTEM_Click;
+            // 
+            // ClickCounter
+            // 
+            ClickCounter.AutoSize = true;
+            ClickCounter.Font = new Font("Bernard MT Condensed", 26.25F, FontStyle.Bold);
+            ClickCounter.ForeColor = Color.Salmon;
+            ClickCounter.Location = new Point(999, 237);
+            ClickCounter.Name = "ClickCounter";
+            ClickCounter.Size = new Size(215, 41);
+            ClickCounter.TabIndex = 2;
+            ClickCounter.Text = "Click Counter:";
+            // 
+            // Coin
+            // 
+            Coin.Image = Properties.Resources.Coin;
+            Coin.Location = new Point(311, 135);
+            Coin.Name = "Coin";
+            Coin.Size = new Size(416, 386);
+            Coin.SizeMode = PictureBoxSizeMode.Zoom;
+            Coin.TabIndex = 3;
+            Coin.TabStop = false;
             // 
             // BackToMenu
             // 
@@ -72,34 +93,12 @@ namespace AutoClickerG
             BackToMenu.TabStop = false;
             BackToMenu.Click += BackToMenu_Click;
             // 
-            // ClickCounter
-            // 
-            ClickCounter.AutoSize = true;
-            ClickCounter.Font = new Font("Bernard MT Condensed", 26.25F, FontStyle.Bold);
-            ClickCounter.ForeColor = Color.Salmon;
-            ClickCounter.Location = new Point(999, 237);
-            ClickCounter.Name = "ClickCounter";
-            ClickCounter.Size = new Size(215, 41);
-            ClickCounter.TabIndex = 5;
-            ClickCounter.Text = "Click Counter:";
-            // 
-            // CTEM
-            // 
-            CTEM.Image = Properties.Resources.ClickToEarnMoney;
-            CTEM.Location = new Point(480, 14);
-            CTEM.Name = "CTEM";
-            CTEM.Size = new Size(960, 220);
-            CTEM.SizeMode = PictureBoxSizeMode.CenterImage;
-            CTEM.TabIndex = 6;
-            CTEM.TabStop = false;
-            CTEM.Click += CTEM_Click;
-            // 
             // Play
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Moccasin;
-            ClientSize = new Size(1920, 1061);
+            ClientSize = new Size(1920, 1080);
             Controls.Add(CTEM);
             Controls.Add(ClickCounter);
             Controls.Add(BackToMenu);

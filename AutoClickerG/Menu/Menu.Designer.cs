@@ -49,7 +49,7 @@
             AutoClicker.Name = "AutoClicker";
             AutoClicker.Size = new Size(960, 122);
             AutoClicker.SizeMode = PictureBoxSizeMode.CenterImage;
-            AutoClicker.TabIndex = 6;
+            AutoClicker.TabIndex = 0;
             AutoClicker.TabStop = false;
             // 
             // play
@@ -112,7 +112,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Moccasin;
-            ClientSize = new Size(1920, 1061);
+            ClientSize = new Size(1920, 1080);
             Controls.Add(exit);
             Controls.Add(options);
             Controls.Add(achievements);
