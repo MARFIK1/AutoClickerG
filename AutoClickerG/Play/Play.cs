@@ -36,6 +36,7 @@ namespace AutoClickerG
             }
             while (IsCoinInPictureBox(x, y, CTEM) || IsCoinInPictureBox(x, y, BackToMenu));
             Coin.Location = new Point(x, y);
+            Coin.Size = new Size(300, 300);
             Coin.Visible = true;
             GlobalVariables.AccountBalance++;
             GlobalVariables.ClickCounter++;

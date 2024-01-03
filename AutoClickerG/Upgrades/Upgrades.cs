@@ -12,46 +12,54 @@ namespace AutoClickerG
 {
     public partial class Upgrades : Form
     {
-        private Point panelLocation;
-
+        private Label[] upgradeLabels;
         public Upgrades()
         {
             InitializeComponent();
             this.Size = new Size(1920, 1080);
             this.WindowState = FormWindowState.Maximized;
             Panel draggablePanel = new Panel();
-            draggablePanel.Size = new Size(2920, 2080);
-            ScrollableControl scrollableControl = new ScrollableControl();
-            scrollableControl.Dock = DockStyle.Fill;
-            scrollableControl.AutoScroll = true;
-            scrollableControl.Controls.Add(draggablePanel);
-            this.Controls.Add(scrollableControl);
-            draggablePanel.MouseDown += new MouseEventHandler(Panel_MouseDown);
-            draggablePanel.MouseMove += new MouseEventHandler(Panel_MouseMove);
-            this.Controls.Remove(upg0);
-            scrollableControl.Controls.Add(upg0);
-            upg0.BringToFront();
-        }
+            draggablePanel.Size = new Size(1920, 1080);
+            draggablePanel.AutoScroll = true;
+            this.Controls.Add(draggablePanel);
 
-        private void Panel_MouseDown(object sender, MouseEventArgs e)
-        {
-            panelLocation = e.Location;
-        }
-
-        private void Panel_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
+            string[] upgrades = new string[]
             {
-                Panel panel = (Panel)sender;
-                Point newLocation = panel.Location + new Size(e.Location) - new Size(panelLocation);
-                
-                if (newLocation.X >= 0 && newLocation.X <= 5000 - panel.Width)
+                "Double Click - Podwaja moc kliknięcia",
+                "Auto Clicker - Automatyczne kliknięcia co sekundę",
+                "Click Multiplier - Mnoży punkty z kliknięcia przez 5",
+                "Click Storm - Kliknięcia generują dodatkowe punkty przez 10 sekund",
+                "Bonus Time - Podwaja wszystkie punkty przez 30 sekund",
+                "Click Magnet - Automatycznie zbiera bonusy na ekranie",
+                "Power Surge - Zwiększa moc kliknięcia o 200% przez 20 sekund",
+                "Click Frenzy - Kliknięcia generują 10x punktów przez 10 sekund",
+                "Golden Click - Kliknięcia generują złote monety",
+                "Infinity Click - Kliknięcia generują nieskończoną ilość punktów przez 5 sekund"
+            };
+
+            int labelsPerColumn = 10;
+            int labelHeight = 50;
+            int labelWidth = 200;
+            int labelMargin = 20;
+            int columnMargin = 750;
+
+            for (int i = 0; i < upgrades.Length; i++)
+            {
+                for (int j = 0; j < 5; j++)
                 {
-                    panel.Left = newLocation.X;
-                }
-                if (newLocation.Y >= 0 && newLocation.Y <= 3000 - panel.Height)
-                {
-                    panel.Top = newLocation.Y;
+                    Label upgradeLabel = new Label();
+                    upgradeLabel.AutoSize = true;
+                    upgradeLabel.Font = new Font("Bernard MT Condensed", 14F, FontStyle.Bold);
+                    upgradeLabel.Location = new Point(
+                        (i % 2) * (labelWidth + labelMargin + columnMargin), 
+                        (i / 2) * (5 * (labelHeight + labelMargin)) + (j * (labelHeight + labelMargin))
+                    );
+                    upgradeLabel.Name = "upgradeLabel" + i + "_" + j;
+                    upgradeLabel.Size = new Size(188, 41);
+                    upgradeLabel.TabIndex = i;
+                    upgradeLabel.Text = "Upgrade " + (i + 1) + " Level " + (j + 1) + ": " + upgrades[i] + " x" + (j + 1);
+                    draggablePanel.Controls.Add(upgradeLabel);
+                    upgradeLabel.BringToFront();
                 }
             }
         }

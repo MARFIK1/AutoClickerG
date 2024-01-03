@@ -113,6 +113,16 @@ namespace AutoClickerG.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap CoinToClick {
+            get {
+                object obj = ResourceManager.GetObject("CoinToClick", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap EXIT {
             get {
                 object obj = ResourceManager.GetObject("EXIT", resourceCulture);
