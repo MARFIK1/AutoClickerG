@@ -16,6 +16,7 @@ namespace AutoClickerG
         public Upgrades()
         {
             InitializeComponent();
+            this.Load += Upgrades_Load;
             this.Size = new Size(1920, 1080);
             this.WindowState = FormWindowState.Maximized;
             Panel draggablePanel = new Panel();
@@ -36,32 +37,52 @@ namespace AutoClickerG
                 "Golden Click - Kliknięcia generują złote monety",
                 "Infinity Click - Kliknięcia generują nieskończoną ilość punktów przez 5 sekund"
             };
+        }
+        private void Upgrades_Load(object sender, EventArgs e)
+        {
+            Image img1 = new Bitmap(UpgradeArrow1.Image);
+            img1.RotateFlip(RotateFlipType.RotateNoneFlipX);
+            UpgradeArrow1.Image = img1;
 
-            int labelsPerColumn = 10;
-            int labelHeight = 50;
-            int labelWidth = 200;
-            int labelMargin = 20;
-            int columnMargin = 750;
+            Image img2 = new Bitmap(UpgradeArrow2.Image);
+            img2.RotateFlip(RotateFlipType.RotateNoneFlipX);
+            UpgradeArrow2.Image = img2;
 
-            for (int i = 0; i < upgrades.Length; i++)
-            {
-                for (int j = 0; j < 5; j++)
-                {
-                    Label upgradeLabel = new Label();
-                    upgradeLabel.AutoSize = true;
-                    upgradeLabel.Font = new Font("Bernard MT Condensed", 14F, FontStyle.Bold);
-                    upgradeLabel.Location = new Point(
-                        (i % 2) * (labelWidth + labelMargin + columnMargin), 
-                        (i / 2) * (5 * (labelHeight + labelMargin)) + (j * (labelHeight + labelMargin))
-                    );
-                    upgradeLabel.Name = "upgradeLabel" + i + "_" + j;
-                    upgradeLabel.Size = new Size(188, 41);
-                    upgradeLabel.TabIndex = i;
-                    upgradeLabel.Text = "Upgrade " + (i + 1) + " Level " + (j + 1) + ": " + upgrades[i] + " x" + (j + 1);
-                    draggablePanel.Controls.Add(upgradeLabel);
-                    upgradeLabel.BringToFront();
-                }
-            }
+            Image img3 = new Bitmap(UpgradeArrow3.Image);
+            img3.RotateFlip(RotateFlipType.RotateNoneFlipX);
+            UpgradeArrow3.Image = img3;
+
+            Image img4 = new Bitmap(UpgradeArrow4.Image);
+            img4.RotateFlip(RotateFlipType.Rotate270FlipNone);
+            UpgradeArrow4.Image = img4;
+
+            Image img5 = new Bitmap(UpgradeArrow5.Image);
+            img5.RotateFlip(RotateFlipType.Rotate270FlipNone);
+            UpgradeArrow5.Image = img5;
+
+            Image img6 = new Bitmap(UpgradeArrow6.Image);
+            img6.RotateFlip(RotateFlipType.Rotate270FlipNone);
+            UpgradeArrow6.Image = img6;
+
+            Image img7 = new Bitmap(UpgradeArrow7.Image);
+            img7.RotateFlip(RotateFlipType.RotateNoneFlipX);
+            UpgradeArrow7.Image = img7;
+
+            Image img8 = new Bitmap(UpgradeArrow8.Image);
+            img8.RotateFlip(RotateFlipType.RotateNoneFlipX);
+            UpgradeArrow8.Image = img8;
+
+            Image img9 = new Bitmap(UpgradeArrow9.Image);
+            img9.RotateFlip(RotateFlipType.Rotate270FlipNone);
+            UpgradeArrow9.Image = img9;
+
+            Image img11 = new Bitmap(UpgradeArrow11.Image);
+            img11.RotateFlip(RotateFlipType.Rotate270FlipNone);
+            UpgradeArrow11.Image = img11;
+
+            Image img12 = new Bitmap(UpgradeArrow12.Image);
+            img12.RotateFlip(RotateFlipType.Rotate270FlipNone);
+            UpgradeArrow12.Image = img12;
         }
     }
 }

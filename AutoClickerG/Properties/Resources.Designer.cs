@@ -153,6 +153,16 @@ namespace AutoClickerG.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap UpgradeArrow {
+            get {
+                object obj = ResourceManager.GetObject("UpgradeArrow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap UPGRADES {
             get {
                 object obj = ResourceManager.GetObject("UPGRADES", resourceCulture);
