@@ -17,8 +17,10 @@ namespace AutoClickerG
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
-            CoinBalance.Text = "Account Balance: " + GlobalVariables.AccountBalance.ToString();
-            ClickCounter.Text = "Click Counter: " + GlobalVariables.ClickCounter.ToString();
+            this.FormBorderStyle = FormBorderStyle.None;
+            Coins.Text = ": " + GlobalVariables.CoinBalance.ToString();
+            Clicks.Text = ": " + GlobalVariables.ClickCounter.ToString();
+            ClickMultiplier.Text = "Click Multiplier: " + GlobalVariables.ClickMultiplier.ToString() + "x";
 
             coinTimer = new System.Windows.Forms.Timer();
             coinTimer.Interval = 3000;
@@ -38,10 +40,10 @@ namespace AutoClickerG
             Coin.Location = new Point(x, y);
             Coin.Size = new Size(300, 300);
             Coin.Visible = true;
-            GlobalVariables.AccountBalance++;
+            GlobalVariables.CoinBalance += GlobalVariables.ClickMultiplier;
             GlobalVariables.ClickCounter++;
-            CoinBalance.Text = "Account Balance: " + GlobalVariables.AccountBalance.ToString();
-            ClickCounter.Text = "Click Counter: " + GlobalVariables.ClickCounter.ToString();
+            Coins.Text = ": " + GlobalVariables.CoinBalance.ToString();
+            Clicks.Text = ": " + GlobalVariables.ClickCounter.ToString();
             coinTimer.Stop();
             coinTimer.Start();
         }

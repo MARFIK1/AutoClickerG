@@ -157,6 +157,7 @@
             UpgradeArrow2.SizeMode = PictureBoxSizeMode.CenterImage;
             UpgradeArrow2.TabIndex = 4;
             UpgradeArrow2.TabStop = false;
+            UpgradeArrow2.Visible = false;
             // 
             // ClickBoostII
             // 
@@ -168,6 +169,7 @@
             ClickBoostII.TabIndex = 3;
             ClickBoostII.Text = "Click Boost II\r\nCost: 200\r\nReward: Increases click power by 1.5x\r\n";
             ClickBoostII.UseVisualStyleBackColor = false;
+            ClickBoostII.Visible = false;
             // 
             // UpgradeArrow3
             // 
@@ -178,6 +180,7 @@
             UpgradeArrow3.SizeMode = PictureBoxSizeMode.CenterImage;
             UpgradeArrow3.TabIndex = 5;
             UpgradeArrow3.TabStop = false;
+            UpgradeArrow3.Visible = false;
             // 
             // ClickBoostIII
             // 
@@ -189,6 +192,7 @@
             ClickBoostIII.TabIndex = 6;
             ClickBoostIII.Text = "Click Boost III\r\nCost: 500\r\nReward: Increases click power by 2x\r\n";
             ClickBoostIII.UseVisualStyleBackColor = false;
+            ClickBoostIII.Visible = false;
             // 
             // UpgradeArrow4
             // 
@@ -199,6 +203,7 @@
             UpgradeArrow4.SizeMode = PictureBoxSizeMode.CenterImage;
             UpgradeArrow4.TabIndex = 7;
             UpgradeArrow4.TabStop = false;
+            UpgradeArrow4.Visible = false;
             // 
             // ClickBoostIV
             // 
@@ -210,6 +215,7 @@
             ClickBoostIV.TabIndex = 8;
             ClickBoostIV.Text = "Click Boost IV\r\nCost: 1000\r\nReward: Increases click power by 3x\r\n";
             ClickBoostIV.UseVisualStyleBackColor = false;
+            ClickBoostIV.Visible = false;
             // 
             // UpgradeArrow5
             // 
@@ -220,6 +226,7 @@
             UpgradeArrow5.SizeMode = PictureBoxSizeMode.CenterImage;
             UpgradeArrow5.TabIndex = 9;
             UpgradeArrow5.TabStop = false;
+            UpgradeArrow5.Visible = false;
             // 
             // ClickBoostV
             // 
@@ -231,6 +238,7 @@
             ClickBoostV.TabIndex = 10;
             ClickBoostV.Text = "Click Boost V\r\nCost: 5000\r\nReward: Increases click power by 4x\r\n";
             ClickBoostV.UseVisualStyleBackColor = false;
+            ClickBoostV.Visible = false;
             // 
             // UpgradeArrow6
             // 
@@ -262,6 +270,7 @@
             UpgradeArrow7.SizeMode = PictureBoxSizeMode.CenterImage;
             UpgradeArrow7.TabIndex = 16;
             UpgradeArrow7.TabStop = false;
+            UpgradeArrow7.Visible = false;
             // 
             // AutoClickerII
             // 
@@ -273,6 +282,7 @@
             AutoClickerII.TabIndex = 15;
             AutoClickerII.Text = "Auto Clicker II\r\nCost: 1000\r\nReward: Earn 5 coin for every 5 seconds\r\n";
             AutoClickerII.UseVisualStyleBackColor = false;
+            AutoClickerII.Visible = false;
             // 
             // UpgradeArrow8
             // 
@@ -283,6 +293,7 @@
             UpgradeArrow8.SizeMode = PictureBoxSizeMode.CenterImage;
             UpgradeArrow8.TabIndex = 17;
             UpgradeArrow8.TabStop = false;
+            UpgradeArrow8.Visible = false;
             // 
             // AutoClickerIII
             // 
@@ -294,6 +305,7 @@
             AutoClickerIII.TabIndex = 18;
             AutoClickerIII.Text = "Auto Clicker III\r\nCost: 2000\r\nReward: Earn 10 coin for every 5 seconds\r\n";
             AutoClickerIII.UseVisualStyleBackColor = false;
+            AutoClickerIII.Visible = false;
             // 
             // UpgradeArrow9
             // 
@@ -304,6 +316,7 @@
             UpgradeArrow9.SizeMode = PictureBoxSizeMode.CenterImage;
             UpgradeArrow9.TabIndex = 19;
             UpgradeArrow9.TabStop = false;
+            UpgradeArrow9.Visible = false;
             // 
             // AutoClickerIV
             // 
@@ -315,6 +328,7 @@
             AutoClickerIV.TabIndex = 20;
             AutoClickerIV.Text = "Auto Clicker IV\r\nCost: 5000\r\nReward: Earn 25 coin for every 5 seconds\r\n";
             AutoClickerIV.UseVisualStyleBackColor = false;
+            AutoClickerIV.Visible = false;
             // 
             // UpgradeArrow10
             // 
@@ -325,6 +339,7 @@
             UpgradeArrow10.SizeMode = PictureBoxSizeMode.CenterImage;
             UpgradeArrow10.TabIndex = 21;
             UpgradeArrow10.TabStop = false;
+            UpgradeArrow10.Visible = false;
             // 
             // AutoClickerV
             // 
@@ -336,6 +351,7 @@
             AutoClickerV.TabIndex = 22;
             AutoClickerV.Text = "Auto Clicker V\r\nCost: 10000\r\nReward: Earn 50 coin for every 5 seconds\r\n";
             AutoClickerV.UseVisualStyleBackColor = false;
+            AutoClickerV.Visible = false;
             // 
             // UpgradeArrow11
             // 
@@ -367,6 +383,7 @@
             UpgradeArrow12.SizeMode = PictureBoxSizeMode.CenterImage;
             UpgradeArrow12.TabIndex = 24;
             UpgradeArrow12.TabStop = false;
+            UpgradeArrow12.Visible = false;
             // 
             // ClickComboII
             // 
@@ -378,6 +395,7 @@
             ClickComboII.TabIndex = 25;
             ClickComboII.Text = "Click Combo II\r\nCost: 1250\r\nReward: Each click without interruption, increase the click force by 1x, up to a maximum of 2x.\r\n";
             ClickComboII.UseVisualStyleBackColor = false;
+            ClickComboII.Visible = false;
             // 
             // UpgradeArrow13
             // 
@@ -388,6 +406,7 @@
             UpgradeArrow13.SizeMode = PictureBoxSizeMode.CenterImage;
             UpgradeArrow13.TabIndex = 26;
             UpgradeArrow13.TabStop = false;
+            UpgradeArrow13.Visible = false;
             // 
             // ClickComboIII
             // 
@@ -399,6 +418,7 @@
             ClickComboIII.TabIndex = 27;
             ClickComboIII.Text = "Click Combo III\r\nCost: 5000\r\nReward: Each click without interruption, increase the click force by 1x, up to a maximum of 3x.\r\n";
             ClickComboIII.UseVisualStyleBackColor = false;
+            ClickComboIII.Visible = false;
             // 
             // UpgradeArrow14
             // 
@@ -430,6 +450,7 @@
             UpgradeArrow15.SizeMode = PictureBoxSizeMode.CenterImage;
             UpgradeArrow15.TabIndex = 30;
             UpgradeArrow15.TabStop = false;
+            UpgradeArrow15.Visible = false;
             // 
             // LuckyDiamondsII
             // 
@@ -441,6 +462,7 @@
             LuckyDiamondsII.TabIndex = 31;
             LuckyDiamondsII.Text = "Lucky Diamonds II\r\nCost: 1750\r\nReward: Increase your chance of finding diamonds to 5%\r\n";
             LuckyDiamondsII.UseVisualStyleBackColor = false;
+            LuckyDiamondsII.Visible = false;
             // 
             // UpgradeArrow16
             // 
@@ -451,6 +473,7 @@
             UpgradeArrow16.SizeMode = PictureBoxSizeMode.CenterImage;
             UpgradeArrow16.TabIndex = 32;
             UpgradeArrow16.TabStop = false;
+            UpgradeArrow16.Visible = false;
             // 
             // LuckyDiamondsIII
             // 
@@ -462,6 +485,7 @@
             LuckyDiamondsIII.TabIndex = 33;
             LuckyDiamondsIII.Text = "Lucky Diamonds III\r\nCost: 3000\r\nReward: Increase your chance of finding diamonds to 7.5%\r\n";
             LuckyDiamondsIII.UseVisualStyleBackColor = false;
+            LuckyDiamondsIII.Visible = false;
             // 
             // UpgradeArrow17
             // 
@@ -472,6 +496,7 @@
             UpgradeArrow17.SizeMode = PictureBoxSizeMode.CenterImage;
             UpgradeArrow17.TabIndex = 34;
             UpgradeArrow17.TabStop = false;
+            UpgradeArrow17.Visible = false;
             // 
             // LuckyDiamondsIV
             // 
@@ -483,6 +508,7 @@
             LuckyDiamondsIV.TabIndex = 35;
             LuckyDiamondsIV.Text = "Lucky Diamonds IV\r\nCost: 5000\r\nReward: Increase your chance of finding diamonds to 12.5%\r\n";
             LuckyDiamondsIV.UseVisualStyleBackColor = false;
+            LuckyDiamondsIV.Visible = false;
             // 
             // UpgradeArrow18
             // 
@@ -493,6 +519,7 @@
             UpgradeArrow18.SizeMode = PictureBoxSizeMode.CenterImage;
             UpgradeArrow18.TabIndex = 36;
             UpgradeArrow18.TabStop = false;
+            UpgradeArrow18.Visible = false;
             // 
             // LuckyDiamondsV
             // 
@@ -504,6 +531,7 @@
             LuckyDiamondsV.TabIndex = 37;
             LuckyDiamondsV.Text = "Lucky Diamonds V\r\nCost: 7500\r\nReward: Increase your chance of finding diamonds to 20%\r\n";
             LuckyDiamondsV.UseVisualStyleBackColor = false;
+            LuckyDiamondsV.Visible = false;
             // 
             // UpgradeArrow19
             // 
@@ -535,6 +563,7 @@
             UpgradeArrow20.SizeMode = PictureBoxSizeMode.CenterImage;
             UpgradeArrow20.TabIndex = 40;
             UpgradeArrow20.TabStop = false;
+            UpgradeArrow20.Visible = false;
             // 
             // DiamondBoostII
             // 
@@ -546,6 +575,7 @@
             DiamondBoostII.TabIndex = 41;
             DiamondBoostII.Text = "Diamond Boost II\r\nCost: 600\r\nReward: Increases the diamond multiplier by 1.75x\r\n";
             DiamondBoostII.UseVisualStyleBackColor = false;
+            DiamondBoostII.Visible = false;
             // 
             // UpgradeArrow21
             // 
@@ -556,6 +586,7 @@
             UpgradeArrow21.SizeMode = PictureBoxSizeMode.CenterImage;
             UpgradeArrow21.TabIndex = 42;
             UpgradeArrow21.TabStop = false;
+            UpgradeArrow21.Visible = false;
             // 
             // DiamondBoostIII
             // 
@@ -567,6 +598,7 @@
             DiamondBoostIII.TabIndex = 43;
             DiamondBoostIII.Text = "Diamond Boost III\r\nCost: 1000\r\nReward: Increases the diamond multiplier by 2x\r\n";
             DiamondBoostIII.UseVisualStyleBackColor = false;
+            DiamondBoostIII.Visible = false;
             // 
             // UpgradeArrow22
             // 
@@ -577,6 +609,7 @@
             UpgradeArrow22.SizeMode = PictureBoxSizeMode.CenterImage;
             UpgradeArrow22.TabIndex = 44;
             UpgradeArrow22.TabStop = false;
+            UpgradeArrow22.Visible = false;
             // 
             // DiamondBoostIV
             // 
@@ -588,6 +621,7 @@
             DiamondBoostIV.TabIndex = 45;
             DiamondBoostIV.Text = "Diamond Boost IV\r\nCost: 3000\r\nReward: Increases the diamond multiplier by 3x\r\n";
             DiamondBoostIV.UseVisualStyleBackColor = false;
+            DiamondBoostIV.Visible = false;
             // 
             // UpgradeArrow23
             // 
@@ -619,6 +653,7 @@
             UpgradeArrow24.SizeMode = PictureBoxSizeMode.CenterImage;
             UpgradeArrow24.TabIndex = 69;
             UpgradeArrow24.TabStop = false;
+            UpgradeArrow24.Visible = false;
             // 
             // BalanceDoublerII
             // 
@@ -630,6 +665,7 @@
             BalanceDoublerII.TabIndex = 65;
             BalanceDoublerII.Text = "Balance Doubler II\r\nCost: 5000\r\nReward: Doubles the amount of coins and diamonds you earn for each click for 5 seconds\r\n";
             BalanceDoublerII.UseVisualStyleBackColor = false;
+            BalanceDoublerII.Visible = false;
             // 
             // UpgradeArrow25
             // 
@@ -640,6 +676,7 @@
             UpgradeArrow25.SizeMode = PictureBoxSizeMode.CenterImage;
             UpgradeArrow25.TabIndex = 70;
             UpgradeArrow25.TabStop = false;
+            UpgradeArrow25.Visible = false;
             // 
             // BalanceDoublerIII
             // 
@@ -651,6 +688,7 @@
             BalanceDoublerIII.TabIndex = 55;
             BalanceDoublerIII.Text = "Balance Doubler III\r\nCost: 7000\r\nReward: Doubles the amount of coins and diamonds you earn for each click for 7 seconds\r\n";
             BalanceDoublerIII.UseVisualStyleBackColor = false;
+            BalanceDoublerIII.Visible = false;
             // 
             // UpgradeArrow26
             // 
@@ -682,6 +720,7 @@
             UpgradeArrow27.SizeMode = PictureBoxSizeMode.CenterImage;
             UpgradeArrow27.TabIndex = 60;
             UpgradeArrow27.TabStop = false;
+            UpgradeArrow27.Visible = false;
             // 
             // DiamondRushII
             // 
@@ -693,6 +732,7 @@
             DiamondRushII.TabIndex = 61;
             DiamondRushII.Text = "Diamond Rush II\r\nCost: 3000\r\nReward: For 5 seconds, every click generates a diamond\r\n";
             DiamondRushII.UseVisualStyleBackColor = false;
+            DiamondRushII.Visible = false;
             // 
             // UpgradeArrow28
             // 
@@ -703,6 +743,7 @@
             UpgradeArrow28.SizeMode = PictureBoxSizeMode.CenterImage;
             UpgradeArrow28.TabIndex = 68;
             UpgradeArrow28.TabStop = false;
+            UpgradeArrow28.Visible = false;
             // 
             // DiamondRushIII
             // 
@@ -714,6 +755,7 @@
             DiamondRushIII.TabIndex = 63;
             DiamondRushIII.Text = "Diamond Rush III\r\nCost: 5000\r\nReward: For 7 seconds, every click generates a diamond\r\n";
             DiamondRushIII.UseVisualStyleBackColor = false;
+            DiamondRushIII.Visible = false;
             // 
             // UpgradeArrow29
             // 
@@ -724,6 +766,7 @@
             UpgradeArrow29.SizeMode = PictureBoxSizeMode.CenterImage;
             UpgradeArrow29.TabIndex = 71;
             UpgradeArrow29.TabStop = false;
+            UpgradeArrow29.Visible = false;
             // 
             // DiamondRushIV
             // 
@@ -735,6 +778,7 @@
             DiamondRushIV.TabIndex = 72;
             DiamondRushIV.Text = "Diamond Rush IV\r\nCost: 10000\r\nReward: For 10 seconds, every click generates a diamond\r\n";
             DiamondRushIV.UseVisualStyleBackColor = false;
+            DiamondRushIV.Visible = false;
             // 
             // WTU
             // 

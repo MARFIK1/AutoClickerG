@@ -6,6 +6,7 @@ namespace AutoClickerG
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
+            this.FormBorderStyle = FormBorderStyle.None;
         }
 
         private void Menu_Load(object sender, EventArgs e)
@@ -22,8 +23,7 @@ namespace AutoClickerG
 
         private void upgrades_Click(object sender, EventArgs e)
         {
-            Upgrades upgrades = new Upgrades();
-            upgrades.Show();
+            Upgrades.Instance.Show();
             this.Hide();
         }
 

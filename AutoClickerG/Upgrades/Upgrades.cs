@@ -12,6 +12,20 @@ namespace AutoClickerG
 {
     public partial class Upgrades : Form
     {
+        private static Upgrades _instance;
+
+        public static Upgrades Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new Upgrades();
+                }
+                return _instance;
+            }
+        }
+
         private Dictionary<Button, int> upgradeCosts;
         private Dictionary<Button, bool> upgradesPurchased = new Dictionary<Button, bool>();
 
@@ -21,6 +35,7 @@ namespace AutoClickerG
             this.Load += Upgrades_Load;
             this.Size = new Size(1920, 1080);
             this.WindowState = FormWindowState.Maximized;
+            this.FormBorderStyle = FormBorderStyle.None;
             Panel draggablePanel = new Panel();
             draggablePanel.Size = new Size(1920, 1080);
             draggablePanel.AutoScroll = true;
@@ -30,15 +45,15 @@ namespace AutoClickerG
             upgradeCosts = new Dictionary<Button, int>()
             {
                 { ClickBoostI, 10 },
-                { ClickBoostII, 200 },
-                { ClickBoostIII, 500 },
-                { ClickBoostIV, 1000 },
-                { ClickBoostV, 5000 },
-                { AutoClickerI, 500 },
-                { AutoClickerII, 1000 },
-                { AutoClickerIII, 2000 },
-                { AutoClickerIV, 5000 },
-                { AutoClickerV, 10000 },
+                { ClickBoostII, 20 },
+                { ClickBoostIII, 30 },
+                { ClickBoostIV, 40 },
+                { ClickBoostV, 50 },
+                { AutoClickerI, 10 },
+                { AutoClickerII, 20 },
+                { AutoClickerIII, 30 },
+                { AutoClickerIV, 40 },
+                { AutoClickerV, 50 },
                 { ClickComboI, 750 },
                 { ClickComboII, 1250 },
                 { ClickComboIII, 5000 },
@@ -60,6 +75,46 @@ namespace AutoClickerG
                 { DiamondRushIV, 10000 },
             };
 
+            Dictionary<Button, (Button nextButton, PictureBox nextArrow)> nextUpgrade = new Dictionary<Button, (Button, PictureBox)>
+            {
+                { ClickBoostI, (ClickBoostII, UpgradeArrow2) },
+                { ClickBoostII, (ClickBoostIII, UpgradeArrow3 )},
+                { ClickBoostIII, (ClickBoostIV, UpgradeArrow4 )},
+                { ClickBoostIV, (ClickBoostV, UpgradeArrow5 )},
+                { AutoClickerI, (AutoClickerII, UpgradeArrow7 )},
+                { AutoClickerII, (AutoClickerIII, UpgradeArrow8 )},
+                { AutoClickerIII, (AutoClickerIV, UpgradeArrow9 )},
+                { AutoClickerIV, (AutoClickerV, UpgradeArrow10 )},
+                { ClickComboI, (ClickComboII, UpgradeArrow12 )},
+                { ClickComboII, (ClickComboIII, UpgradeArrow13 )},
+                { LuckyDiamondsI, (LuckyDiamondsII, UpgradeArrow15 )},
+                { LuckyDiamondsII, (LuckyDiamondsIII, UpgradeArrow16 )},
+                { LuckyDiamondsIII, (LuckyDiamondsIV, UpgradeArrow17 )},
+                { LuckyDiamondsIV, (LuckyDiamondsV, UpgradeArrow18 )},
+                { DiamondBoostI, (DiamondBoostII, UpgradeArrow20 )},
+                { DiamondBoostII, (DiamondBoostIII, UpgradeArrow21 )},
+                { DiamondBoostIII, (DiamondBoostIV, UpgradeArrow22 )},
+                { BalanceDoublerI, (BalanceDoublerII, UpgradeArrow24 )},
+                { BalanceDoublerII, (BalanceDoublerIII, UpgradeArrow25 )},
+                { DiamondRushI, (DiamondRushII, UpgradeArrow27 )},
+                { DiamondRushII, (DiamondRushIII, UpgradeArrow28 )},
+                { DiamondRushIII, (DiamondRushIV, UpgradeArrow29 )},
+            };
+            
+            Dictionary<Button, double> upgradeRewards = new Dictionary<Button, double>()
+            {
+                { ClickBoostI, 1.25 },
+                { ClickBoostII, 1.5 },
+                { ClickBoostIII, 1.75 },
+                { ClickBoostIV, 3 },
+                { ClickBoostV, 4 },
+                { AutoClickerI , 1 },
+                { AutoClickerII , 5 },
+                { AutoClickerIII , 10 },
+                { AutoClickerIV , 25 },
+                { AutoClickerV , 50 },
+            };
+
             foreach (var upgrade in upgradeCosts)
             {
                 upgradesPurchased.Add(upgrade.Key, false);
@@ -70,16 +125,25 @@ namespace AutoClickerG
                     {
                         MessageBox.Show("Już kupiłeś te ulepszenie.", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                    else if (GlobalVariables.AccountBalance >= localUpgrade.Value)
+                    else if (GlobalVariables.CoinBalance >= localUpgrade.Value)
                     {
                         DialogResult dialogResult = MessageBox.Show("Czy na pewno chcesz zakupić to ulepszenie?", "Potwierdzenie zakupu", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                         if (dialogResult == DialogResult.Yes)
                         {
-                            GlobalVariables.AccountBalance -= localUpgrade.Value;
-                            CoinBalance.Text = GlobalVariables.AccountBalance.ToString();
+                            GlobalVariables.CoinBalance -= localUpgrade.Value;
+                            CoinBalance.Text = GlobalVariables.CoinBalance.ToString();
                             localUpgrade.Key.BackColor = Color.Green;
                             upgradesPurchased[localUpgrade.Key] = true;
                             localUpgrade.Key.Enabled = false;
+                            if (nextUpgrade.ContainsKey(localUpgrade.Key))
+                            {
+                                nextUpgrade[localUpgrade.Key].nextButton.Visible = true;
+                                nextUpgrade[localUpgrade.Key].nextArrow.Visible = true;
+                            }
+                            if (upgradeRewards.ContainsKey(localUpgrade.Key))
+                            {
+                                GlobalVariables.ClickMultiplier = upgradeRewards[localUpgrade.Key];
+                            }
                         }
                     }
                     else
@@ -91,7 +155,27 @@ namespace AutoClickerG
         }
         private void Upgrades_Load(object sender, EventArgs e)
         {
-            CoinBalance.Text = GlobalVariables.AccountBalance.ToString();
+            CoinBalance.Text = GlobalVariables.CoinBalance.ToString();
+
+            GlobalVariables.OnCoinBalanceChanged += balance =>
+            {
+                CoinBalance.Text = balance.ToString();
+
+                foreach (var upgrade in upgradeCosts)
+                {
+                    if (!upgradesPurchased.ContainsKey(upgrade.Key) || !upgradesPurchased[upgrade.Key])
+                    {
+                        if (balance >= upgrade.Value)
+                        {
+                            upgrade.Key.BackColor = Color.Orange;
+                        }
+                        else
+                        {
+                            upgrade.Key.BackColor = Color.LightCoral;
+                        }
+                    }
+                }
+            };
 
             foreach (var upgrade in upgradeCosts)
             {
@@ -99,7 +183,7 @@ namespace AutoClickerG
                 {
                     upgrade.Key.BackColor = Color.Green;
                 }
-                else if (GlobalVariables.AccountBalance >= upgrade.Value)
+                else if (GlobalVariables.CoinBalance >= upgrade.Value)
                 {
                     upgrade.Key.BackColor = Color.Orange;
                 }
