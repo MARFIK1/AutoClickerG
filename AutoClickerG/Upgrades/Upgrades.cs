@@ -83,6 +83,38 @@ namespace AutoClickerG
             Image img12 = new Bitmap(UpgradeArrow12.Image);
             img12.RotateFlip(RotateFlipType.Rotate270FlipNone);
             UpgradeArrow12.Image = img12;
+
+            Image img17 = new Bitmap(UpgradeArrow17.Image);
+            img17.RotateFlip(RotateFlipType.Rotate270FlipNone);
+            UpgradeArrow17.Image = img17;
+
+            Image img18 = new Bitmap(UpgradeArrow18.Image);
+            img18.RotateFlip(RotateFlipType.RotateNoneFlipX);
+            UpgradeArrow18.Image = img18;
+
+            Image img22 = new Bitmap(UpgradeArrow22.Image);
+            img22.RotateFlip(RotateFlipType.Rotate90FlipNone);
+            UpgradeArrow22.Image = img22;
+
+            Image img23 = new Bitmap(UpgradeArrow23.Image);
+            img23.RotateFlip(RotateFlipType.Rotate90FlipNone);
+            UpgradeArrow23.Image = img23;
+
+            Image img26 = new Bitmap(UpgradeArrow26.Image);
+            img26.RotateFlip(RotateFlipType.RotateNoneFlipX);
+            UpgradeArrow26.Image = img26;
+
+            Image img27 = new Bitmap(UpgradeArrow27.Image);
+            img27.RotateFlip(RotateFlipType.RotateNoneFlipX);
+            UpgradeArrow27.Image = img27;
+
+            Image img28 = new Bitmap(UpgradeArrow28.Image);
+            img28.RotateFlip(RotateFlipType.Rotate90FlipNone);
+            UpgradeArrow28.Image = img28;
+
+            Image img29 = new Bitmap(UpgradeArrow29.Image);
+            img29.RotateFlip(RotateFlipType.RotateNoneFlipX);
+            UpgradeArrow29.Image = img29;
         }
     }
 }
