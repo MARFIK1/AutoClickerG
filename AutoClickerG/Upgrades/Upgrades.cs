@@ -12,7 +12,9 @@ namespace AutoClickerG
 {
     public partial class Upgrades : Form
     {
-        private Label[] upgradeLabels;
+        private Dictionary<Button, int> upgradeCosts;
+        private Dictionary<Button, bool> upgradesPurchased = new Dictionary<Button, bool>();
+
         public Upgrades()
         {
             InitializeComponent();
@@ -23,23 +25,90 @@ namespace AutoClickerG
             draggablePanel.Size = new Size(1920, 1080);
             draggablePanel.AutoScroll = true;
             this.Controls.Add(draggablePanel);
+            BackToMenu.Click += BackToMenu_Click;
 
-            string[] upgrades = new string[]
+            upgradeCosts = new Dictionary<Button, int>()
             {
-                "Double Click - Podwaja moc kliknięcia",
-                "Auto Clicker - Automatyczne kliknięcia co sekundę",
-                "Click Multiplier - Mnoży punkty z kliknięcia przez 5",
-                "Click Storm - Kliknięcia generują dodatkowe punkty przez 10 sekund",
-                "Bonus Time - Podwaja wszystkie punkty przez 30 sekund",
-                "Click Magnet - Automatycznie zbiera bonusy na ekranie",
-                "Power Surge - Zwiększa moc kliknięcia o 200% przez 20 sekund",
-                "Click Frenzy - Kliknięcia generują 10x punktów przez 10 sekund",
-                "Golden Click - Kliknięcia generują złote monety",
-                "Infinity Click - Kliknięcia generują nieskończoną ilość punktów przez 5 sekund"
+                { ClickBoostI, 10 },
+                { ClickBoostII, 200 },
+                { ClickBoostIII, 500 },
+                { ClickBoostIV, 1000 },
+                { ClickBoostV, 5000 },
+                { AutoClickerI, 500 },
+                { AutoClickerII, 1000 },
+                { AutoClickerIII, 2000 },
+                { AutoClickerIV, 5000 },
+                { AutoClickerV, 10000 },
+                { ClickComboI, 750 },
+                { ClickComboII, 1250 },
+                { ClickComboIII, 5000 },
+                { LuckyDiamondsI, 750 },
+                { LuckyDiamondsII, 1750 },
+                { LuckyDiamondsIII, 3000 },
+                { LuckyDiamondsIV, 5000 },
+                { LuckyDiamondsV, 7500 },
+                { DiamondBoostI, 250 },
+                { DiamondBoostII, 600 },
+                { DiamondBoostIII, 1000 },
+                { DiamondBoostIV, 3000 },
+                { BalanceDoublerI, 3000 },
+                { BalanceDoublerII, 5000 },
+                { BalanceDoublerIII, 7000 },
+                { DiamondRushI, 1500 },
+                { DiamondRushII, 3000 },
+                { DiamondRushIII, 5000 },
+                { DiamondRushIV, 10000 },
             };
+
+            foreach (var upgrade in upgradeCosts)
+            {
+                upgradesPurchased.Add(upgrade.Key, false);
+                var localUpgrade = upgrade;
+                localUpgrade.Key.Click += (sender, e) =>
+                {
+                    if (upgradesPurchased.ContainsKey(localUpgrade.Key) && upgradesPurchased[localUpgrade.Key])
+                    {
+                        MessageBox.Show("Już kupiłeś te ulepszenie.", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else if (GlobalVariables.AccountBalance >= localUpgrade.Value)
+                    {
+                        DialogResult dialogResult = MessageBox.Show("Czy na pewno chcesz zakupić to ulepszenie?", "Potwierdzenie zakupu", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (dialogResult == DialogResult.Yes)
+                        {
+                            GlobalVariables.AccountBalance -= localUpgrade.Value;
+                            CoinBalance.Text = GlobalVariables.AccountBalance.ToString();
+                            localUpgrade.Key.BackColor = Color.Green;
+                            upgradesPurchased[localUpgrade.Key] = true;
+                            localUpgrade.Key.Enabled = false;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Nie masz wystarczającej liczby monet na zakup tego ulepszenia.", "Odmowa zakupu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                };
+            }
         }
         private void Upgrades_Load(object sender, EventArgs e)
         {
+            CoinBalance.Text = GlobalVariables.AccountBalance.ToString();
+
+            foreach (var upgrade in upgradeCosts)
+            {
+                if (upgradesPurchased.ContainsKey(upgrade.Key) && upgradesPurchased[upgrade.Key])
+                {
+                    upgrade.Key.BackColor = Color.Green;
+                }
+                else if (GlobalVariables.AccountBalance >= upgrade.Value)
+                {
+                    upgrade.Key.BackColor = Color.Orange;
+                }
+                else
+                {
+                    upgrade.Key.BackColor = Color.LightCoral;
+                }
+            }
+
             Image img1 = new Bitmap(UpgradeArrow1.Image);
             img1.RotateFlip(RotateFlipType.RotateNoneFlipX);
             UpgradeArrow1.Image = img1;
@@ -115,6 +184,12 @@ namespace AutoClickerG
             Image img29 = new Bitmap(UpgradeArrow29.Image);
             img29.RotateFlip(RotateFlipType.RotateNoneFlipX);
             UpgradeArrow29.Image = img29;
+        }
+        private void BackToMenu_Click(object sender, EventArgs e)
+        {
+            Menu menu = new Menu();
+            menu.Show();
+            this.Hide();
         }
     }
 }

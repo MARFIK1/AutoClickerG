@@ -71,7 +71,7 @@
             UpgradeArrow21 = new PictureBox();
             DiamondBoostIII = new Button();
             UpgradeArrow22 = new PictureBox();
-            DiamonBoostIV = new Button();
+            DiamondBoostIV = new Button();
             UpgradeArrow23 = new PictureBox();
             BalanceDoublerI = new Button();
             UpgradeArrow24 = new PictureBox();
@@ -86,12 +86,12 @@
             DiamondRushIII = new Button();
             UpgradeArrow29 = new PictureBox();
             DiamondRushIV = new Button();
-            UpgradesIntro = new PictureBox();
+            WTU = new PictureBox();
             Coins = new PictureBox();
             CoinBalance = new Label();
             Diamonds = new PictureBox();
             DiamondBalance = new Label();
-            BackToMenuExit = new PictureBox();
+            BackToMenu = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)UpgradeArrow1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)UpgradeArrow2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)UpgradeArrow3).BeginInit();
@@ -121,10 +121,10 @@
             ((System.ComponentModel.ISupportInitialize)UpgradeArrow27).BeginInit();
             ((System.ComponentModel.ISupportInitialize)UpgradeArrow28).BeginInit();
             ((System.ComponentModel.ISupportInitialize)UpgradeArrow29).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)UpgradesIntro).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)WTU).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Coins).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Diamonds).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)BackToMenuExit).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)BackToMenu).BeginInit();
             SuspendLayout();
             // 
             // UpgradeArrow1
@@ -578,16 +578,16 @@
             UpgradeArrow22.TabIndex = 44;
             UpgradeArrow22.TabStop = false;
             // 
-            // DiamonBoostIV
+            // DiamondBoostIV
             // 
-            DiamonBoostIV.BackColor = Color.LightCoral;
-            DiamonBoostIV.Font = new Font("Segoe UI", 10F);
-            DiamonBoostIV.Location = new Point(1738, 764);
-            DiamonBoostIV.Name = "DiamonBoostIV";
-            DiamonBoostIV.Size = new Size(170, 108);
-            DiamonBoostIV.TabIndex = 45;
-            DiamonBoostIV.Text = "Diamond Boost IV\r\nCost: 3000\r\nReward: Increases the diamond multiplier by 3x\r\n";
-            DiamonBoostIV.UseVisualStyleBackColor = false;
+            DiamondBoostIV.BackColor = Color.LightCoral;
+            DiamondBoostIV.Font = new Font("Segoe UI", 10F);
+            DiamondBoostIV.Location = new Point(1738, 764);
+            DiamondBoostIV.Name = "DiamondBoostIV";
+            DiamondBoostIV.Size = new Size(170, 108);
+            DiamondBoostIV.TabIndex = 45;
+            DiamondBoostIV.Text = "Diamond Boost IV\r\nCost: 3000\r\nReward: Increases the diamond multiplier by 3x\r\n";
+            DiamondBoostIV.UseVisualStyleBackColor = false;
             // 
             // UpgradeArrow23
             // 
@@ -736,15 +736,15 @@
             DiamondRushIV.Text = "Diamond Rush IV\r\nCost: 10000\r\nReward: For 10 seconds, every click generates a diamond\r\n";
             DiamondRushIV.UseVisualStyleBackColor = false;
             // 
-            // UpgradesIntro
+            // WTU
             // 
-            UpgradesIntro.Image = Properties.Resources.UPGRADES;
-            UpgradesIntro.Location = new Point(744, 390);
-            UpgradesIntro.Name = "UpgradesIntro";
-            UpgradesIntro.Size = new Size(432, 70);
-            UpgradesIntro.SizeMode = PictureBoxSizeMode.Zoom;
-            UpgradesIntro.TabIndex = 73;
-            UpgradesIntro.TabStop = false;
+            WTU.Image = Properties.Resources.UPGRADES;
+            WTU.Location = new Point(744, 390);
+            WTU.Name = "WTU";
+            WTU.Size = new Size(432, 70);
+            WTU.SizeMode = PictureBoxSizeMode.Zoom;
+            WTU.TabIndex = 73;
+            WTU.TabStop = false;
             // 
             // Coins
             // 
@@ -763,9 +763,9 @@
             CoinBalance.ForeColor = Color.Salmon;
             CoinBalance.Location = new Point(820, 481);
             CoinBalance.Name = "CoinBalance";
-            CoinBalance.Size = new Size(28, 41);
+            CoinBalance.Size = new Size(18, 41);
             CoinBalance.TabIndex = 77;
-            CoinBalance.Text = ":";
+            CoinBalance.Text = "\r\n";
             // 
             // Diamonds
             // 
@@ -784,19 +784,19 @@
             DiamondBalance.ForeColor = Color.Salmon;
             DiamondBalance.Location = new Point(820, 580);
             DiamondBalance.Name = "DiamondBalance";
-            DiamondBalance.Size = new Size(28, 41);
+            DiamondBalance.Size = new Size(18, 41);
             DiamondBalance.TabIndex = 78;
-            DiamondBalance.Text = ":";
+            DiamondBalance.Text = "\r\n";
             // 
-            // BackToMenuExit
+            // BackToMenu
             // 
-            BackToMenuExit.Image = Properties.Resources.BackToMenu;
-            BackToMenuExit.Location = new Point(744, 641);
-            BackToMenuExit.Name = "BackToMenuExit";
-            BackToMenuExit.Size = new Size(432, 50);
-            BackToMenuExit.SizeMode = PictureBoxSizeMode.Zoom;
-            BackToMenuExit.TabIndex = 74;
-            BackToMenuExit.TabStop = false;
+            BackToMenu.Image = Properties.Resources.BackToMenu;
+            BackToMenu.Location = new Point(744, 641);
+            BackToMenu.Name = "BackToMenu";
+            BackToMenu.Size = new Size(432, 50);
+            BackToMenu.SizeMode = PictureBoxSizeMode.Zoom;
+            BackToMenu.TabIndex = 74;
+            BackToMenu.TabStop = false;
             // 
             // Upgrades
             // 
@@ -808,8 +808,8 @@
             Controls.Add(CoinBalance);
             Controls.Add(Diamonds);
             Controls.Add(Coins);
-            Controls.Add(BackToMenuExit);
-            Controls.Add(UpgradesIntro);
+            Controls.Add(BackToMenu);
+            Controls.Add(WTU);
             Controls.Add(UpgradeArrow1);
             Controls.Add(ClickBoostI);
             Controls.Add(UpgradeArrow2);
@@ -853,7 +853,7 @@
             Controls.Add(UpgradeArrow21);
             Controls.Add(DiamondBoostIII);
             Controls.Add(UpgradeArrow22);
-            Controls.Add(DiamonBoostIV);
+            Controls.Add(DiamondBoostIV);
             Controls.Add(UpgradeArrow23);
             Controls.Add(BalanceDoublerI);
             Controls.Add(UpgradeArrow24);
@@ -899,10 +899,10 @@
             ((System.ComponentModel.ISupportInitialize)UpgradeArrow27).EndInit();
             ((System.ComponentModel.ISupportInitialize)UpgradeArrow28).EndInit();
             ((System.ComponentModel.ISupportInitialize)UpgradeArrow29).EndInit();
-            ((System.ComponentModel.ISupportInitialize)UpgradesIntro).EndInit();
+            ((System.ComponentModel.ISupportInitialize)WTU).EndInit();
             ((System.ComponentModel.ISupportInitialize)Coins).EndInit();
             ((System.ComponentModel.ISupportInitialize)Diamonds).EndInit();
-            ((System.ComponentModel.ISupportInitialize)BackToMenuExit).EndInit();
+            ((System.ComponentModel.ISupportInitialize)BackToMenu).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -970,7 +970,7 @@
         private PictureBox UpgradeArrow21;
         private Button DiamondBoostIII;
         private PictureBox UpgradeArrow22;
-        private Button DiamonBoostIV;
+        private Button DiamondBoostIV;
 
         private PictureBox UpgradeArrow23;
         private Button DiamondRushI;
@@ -988,11 +988,11 @@
         private PictureBox UpgradeArrow28;
         private Button BalanceDoublerIII;
 
-        private PictureBox UpgradesIntro;
+        private PictureBox WTU;
         private PictureBox Coins;
         private Label CoinBalance;
         private PictureBox Diamonds;
         private Label DiamondBalance;
-        private PictureBox BackToMenuExit;
+        private PictureBox BackToMenu;
     }
 }
