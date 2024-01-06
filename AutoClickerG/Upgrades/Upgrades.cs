@@ -142,7 +142,14 @@ namespace AutoClickerG
                             }
                             if (upgradeRewards.ContainsKey(localUpgrade.Key))
                             {
-                                GlobalVariables.ClickMultiplier = upgradeRewards[localUpgrade.Key];
+                                if (localUpgrade.Key == ClickBoostI || localUpgrade.Key == ClickBoostII || localUpgrade.Key == ClickBoostIII || localUpgrade.Key == ClickBoostIV || localUpgrade.Key == ClickBoostV)
+                                {
+                                    GlobalVariables.ClickMultiplier = upgradeRewards[localUpgrade.Key];
+                                }
+                                if (localUpgrade.Key == AutoClickerI || localUpgrade.Key == AutoClickerII || localUpgrade.Key == AutoClickerIII || localUpgrade.Key == AutoClickerIV || localUpgrade.Key == AutoClickerV)
+                                {
+                                    GlobalVariables.AutoClickerValue = upgradeRewards[localUpgrade.Key];
+                                }
                             }
                         }
                     }
@@ -156,6 +163,7 @@ namespace AutoClickerG
         private void Upgrades_Load(object sender, EventArgs e)
         {
             CoinBalance.Text = GlobalVariables.CoinBalance.ToString();
+            DiamondBalance.Text = GlobalVariables.DiamondBalance.ToString();
 
             GlobalVariables.OnCoinBalanceChanged += balance =>
             {
