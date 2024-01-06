@@ -36,10 +36,13 @@ namespace AutoClickerG
             ClickMultiplier = new Label();
             DiamondGif = new PictureBox();
             Diamonds = new Label();
+            DiamondMultiplier = new Label();
             DiamondChance = new Label();
             ClickGif = new PictureBox();
             Clicks = new Label();
             BackToMenu = new PictureBox();
+            BalanceDoublerButton = new Button();
+            DiamondRushButton = new Button();
             ((System.ComponentModel.ISupportInitialize)CTEM).BeginInit();
             ((System.ComponentModel.ISupportInitialize)CoinGif).BeginInit();
             ((System.ComponentModel.ISupportInitialize)DiamondGif).BeginInit();
@@ -111,12 +114,23 @@ namespace AutoClickerG
             Diamonds.TabIndex = 81;
             Diamonds.Text = "\r\n";
             // 
+            // DiamondMultiplier
+            // 
+            DiamondMultiplier.AutoSize = true;
+            DiamondMultiplier.Font = new Font("Bernard MT Condensed", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            DiamondMultiplier.ForeColor = Color.Salmon;
+            DiamondMultiplier.Location = new Point(1050, 535);
+            DiamondMultiplier.Name = "DiamondMultiplier";
+            DiamondMultiplier.Size = new Size(18, 41);
+            DiamondMultiplier.TabIndex = 83;
+            DiamondMultiplier.Text = "\r\n";
+            // 
             // DiamondChance
             // 
             DiamondChance.AutoSize = true;
             DiamondChance.Font = new Font("Bernard MT Condensed", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             DiamondChance.ForeColor = Color.Salmon;
-            DiamondChance.Location = new Point(1050, 535);
+            DiamondChance.Location = new Point(1050, 635);
             DiamondChance.Name = "DiamondChance";
             DiamondChance.Size = new Size(18, 41);
             DiamondChance.TabIndex = 82;
@@ -146,7 +160,7 @@ namespace AutoClickerG
             // BackToMenu
             // 
             BackToMenu.Image = Properties.Resources.BackToMenu;
-            BackToMenu.Location = new Point(480, 720);
+            BackToMenu.Location = new Point(480, 820);
             BackToMenu.Name = "BackToMenu";
             BackToMenu.Size = new Size(960, 112);
             BackToMenu.SizeMode = PictureBoxSizeMode.CenterImage;
@@ -154,18 +168,43 @@ namespace AutoClickerG
             BackToMenu.TabStop = false;
             BackToMenu.Click += BackToMenu_Click;
             // 
+            // BalanceDoublerButton
+            // 
+            BalanceDoublerButton.BackColor = Color.LightCoral;
+            BalanceDoublerButton.Font = new Font("Segoe UI", 10F);
+            BalanceDoublerButton.Location = new Point(640, 727);
+            BalanceDoublerButton.Name = "BalanceDoublerButton";
+            BalanceDoublerButton.Size = new Size(170, 70);
+            BalanceDoublerButton.TabIndex = 84;
+            BalanceDoublerButton.Text = "Activate BalanceDoubler";
+            BalanceDoublerButton.UseVisualStyleBackColor = false;
+            // 
+            // DiamondRushButton
+            // 
+            DiamondRushButton.BackColor = Color.LightCoral;
+            DiamondRushButton.Font = new Font("Segoe UI", 10F);
+            DiamondRushButton.Location = new Point(1050, 727);
+            DiamondRushButton.Name = "DiamondRushButton";
+            DiamondRushButton.Size = new Size(170, 70);
+            DiamondRushButton.TabIndex = 85;
+            DiamondRushButton.Text = "Activate DiamondRush";
+            DiamondRushButton.UseVisualStyleBackColor = false;
+            // 
             // Play
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Moccasin;
             ClientSize = new Size(1920, 1061);
+            Controls.Add(DiamondRushButton);
+            Controls.Add(BalanceDoublerButton);
             Controls.Add(CTEM);
             Controls.Add(CoinGif);
             Controls.Add(Coins);
             Controls.Add(ClickMultiplier);
             Controls.Add(DiamondGif);
             Controls.Add(Diamonds);
+            Controls.Add(DiamondMultiplier);
             Controls.Add(DiamondChance);
             Controls.Add(ClickGif);
             Controls.Add(Clicks);
@@ -188,9 +227,12 @@ namespace AutoClickerG
         private Label ClickMultiplier;
         private PictureBox DiamondGif;
         private Label Diamonds;
+        private Label DiamondMultiplier;
         private Label DiamondChance;
         private PictureBox ClickGif;
         private Label Clicks;
         private PictureBox BackToMenu;
+        private Button BalanceDoublerButton;
+        private Button DiamondRushButton;
     }
 }

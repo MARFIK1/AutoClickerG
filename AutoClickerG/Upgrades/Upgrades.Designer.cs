@@ -460,7 +460,7 @@
             LuckyDiamondsII.Name = "LuckyDiamondsII";
             LuckyDiamondsII.Size = new Size(170, 108);
             LuckyDiamondsII.TabIndex = 31;
-            LuckyDiamondsII.Text = "Lucky Diamonds II\r\nCost: 1750\r\nReward: Increase your chance of finding diamonds to 5%\r\n";
+            LuckyDiamondsII.Text = "Lucky Diamonds II\r\nCost: 1750\r\nReward: Increase your chance of finding diamonds to 3%\r\n";
             LuckyDiamondsII.UseVisualStyleBackColor = false;
             LuckyDiamondsII.Visible = false;
             // 
@@ -483,7 +483,7 @@
             LuckyDiamondsIII.Name = "LuckyDiamondsIII";
             LuckyDiamondsIII.Size = new Size(170, 108);
             LuckyDiamondsIII.TabIndex = 33;
-            LuckyDiamondsIII.Text = "Lucky Diamonds III\r\nCost: 3000\r\nReward: Increase your chance of finding diamonds to 7.5%\r\n";
+            LuckyDiamondsIII.Text = "Lucky Diamonds III\r\nCost: 3000\r\nReward: Increase your chance of finding diamonds to 4%\r\n";
             LuckyDiamondsIII.UseVisualStyleBackColor = false;
             LuckyDiamondsIII.Visible = false;
             // 
@@ -506,7 +506,7 @@
             LuckyDiamondsIV.Name = "LuckyDiamondsIV";
             LuckyDiamondsIV.Size = new Size(170, 108);
             LuckyDiamondsIV.TabIndex = 35;
-            LuckyDiamondsIV.Text = "Lucky Diamonds IV\r\nCost: 5000\r\nReward: Increase your chance of finding diamonds to 12.5%\r\n";
+            LuckyDiamondsIV.Text = "Lucky Diamonds IV\r\nCost: 5000\r\nReward: Increase your chance of finding diamonds to 5%\r\n";
             LuckyDiamondsIV.UseVisualStyleBackColor = false;
             LuckyDiamondsIV.Visible = false;
             // 
@@ -529,7 +529,7 @@
             LuckyDiamondsV.Name = "LuckyDiamondsV";
             LuckyDiamondsV.Size = new Size(170, 108);
             LuckyDiamondsV.TabIndex = 37;
-            LuckyDiamondsV.Text = "Lucky Diamonds V\r\nCost: 7500\r\nReward: Increase your chance of finding diamonds to 20%\r\n";
+            LuckyDiamondsV.Text = "Lucky Diamonds V\r\nCost: 7500\r\nReward: Increase your chance of finding diamonds to 10%\r\n";
             LuckyDiamondsV.UseVisualStyleBackColor = false;
             LuckyDiamondsV.Visible = false;
             // 
@@ -551,7 +551,7 @@
             DiamondBoostI.Name = "DiamondBoostI";
             DiamondBoostI.Size = new Size(170, 108);
             DiamondBoostI.TabIndex = 39;
-            DiamondBoostI.Text = "Diamond Boost I\r\nCost: 250\r\nReward: Increases the diamond multiplier by 1.5x\r\n";
+            DiamondBoostI.Text = "Diamond Boost I\r\nCost: 250\r\nReward: Increases the diamond multiplier by 2x\r\n";
             DiamondBoostI.UseVisualStyleBackColor = false;
             // 
             // UpgradeArrow20
@@ -573,7 +573,7 @@
             DiamondBoostII.Name = "DiamondBoostII";
             DiamondBoostII.Size = new Size(170, 108);
             DiamondBoostII.TabIndex = 41;
-            DiamondBoostII.Text = "Diamond Boost II\r\nCost: 600\r\nReward: Increases the diamond multiplier by 1.75x\r\n";
+            DiamondBoostII.Text = "Diamond Boost II\r\nCost: 600\r\nReward: Increases the diamond multiplier by 3x\r\n";
             DiamondBoostII.UseVisualStyleBackColor = false;
             DiamondBoostII.Visible = false;
             // 
@@ -596,7 +596,7 @@
             DiamondBoostIII.Name = "DiamondBoostIII";
             DiamondBoostIII.Size = new Size(170, 108);
             DiamondBoostIII.TabIndex = 43;
-            DiamondBoostIII.Text = "Diamond Boost III\r\nCost: 1000\r\nReward: Increases the diamond multiplier by 2x\r\n";
+            DiamondBoostIII.Text = "Diamond Boost III\r\nCost: 1000\r\nReward: Increases the diamond multiplier by 4x\r\n";
             DiamondBoostIII.UseVisualStyleBackColor = false;
             DiamondBoostIII.Visible = false;
             // 
@@ -619,7 +619,7 @@
             DiamondBoostIV.Name = "DiamondBoostIV";
             DiamondBoostIV.Size = new Size(170, 108);
             DiamondBoostIV.TabIndex = 45;
-            DiamondBoostIV.Text = "Diamond Boost IV\r\nCost: 3000\r\nReward: Increases the diamond multiplier by 3x\r\n";
+            DiamondBoostIV.Text = "Diamond Boost IV\r\nCost: 3000\r\nReward: Increases the diamond multiplier by 5x\r\n";
             DiamondBoostIV.UseVisualStyleBackColor = false;
             DiamondBoostIV.Visible = false;
             // 

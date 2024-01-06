@@ -30,6 +30,10 @@ public static class GlobalVariables
     public static event Action<int> OnDiamondBalanceChanged;
 
     public static double ClickMultiplier { get; set; } = 1;
-    public static double DiamondChance { get; set; } = 10;
+    public static double DiamondChance { get; set; } = 1;
+    public static int DiamondMultiplier { get; set; } = 1;
     public static double AutoClickerValue { get; set; } = 0;
+    public static double ClickComboMultiplier { get; set; } = 0;
+    public static int BalanceDoublerTimer { get; set; } = 0;
+    public static int DiamondRushTimer { get; set; } = 0;
 }

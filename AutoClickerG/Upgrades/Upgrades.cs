@@ -54,25 +54,25 @@ namespace AutoClickerG
                 { AutoClickerIII, 30 },
                 { AutoClickerIV, 40 },
                 { AutoClickerV, 50 },
-                { ClickComboI, 750 },
-                { ClickComboII, 1250 },
-                { ClickComboIII, 5000 },
-                { LuckyDiamondsI, 750 },
-                { LuckyDiamondsII, 1750 },
-                { LuckyDiamondsIII, 3000 },
-                { LuckyDiamondsIV, 5000 },
-                { LuckyDiamondsV, 7500 },
-                { DiamondBoostI, 250 },
-                { DiamondBoostII, 600 },
-                { DiamondBoostIII, 1000 },
-                { DiamondBoostIV, 3000 },
-                { BalanceDoublerI, 3000 },
-                { BalanceDoublerII, 5000 },
-                { BalanceDoublerIII, 7000 },
-                { DiamondRushI, 1500 },
-                { DiamondRushII, 3000 },
-                { DiamondRushIII, 5000 },
-                { DiamondRushIV, 10000 },
+                { ClickComboI, 10 },
+                { ClickComboII, 20 },
+                { ClickComboIII, 30 },
+                { LuckyDiamondsI, 10 },
+                { LuckyDiamondsII, 20 },
+                { LuckyDiamondsIII, 30 },
+                { LuckyDiamondsIV, 40 },
+                { LuckyDiamondsV, 50 },
+                { DiamondBoostI, 10 },
+                { DiamondBoostII, 20 },
+                { DiamondBoostIII, 30 },
+                { DiamondBoostIV, 40 },
+                { BalanceDoublerI, 10 },
+                { BalanceDoublerII, 20 },
+                { BalanceDoublerIII, 30 },
+                { DiamondRushI, 10 },
+                { DiamondRushII, 20 },
+                { DiamondRushIII, 30 },
+                { DiamondRushIV, 40 },
             };
 
             Dictionary<Button, (Button nextButton, PictureBox nextArrow)> nextUpgrade = new Dictionary<Button, (Button, PictureBox)>
@@ -105,14 +105,33 @@ namespace AutoClickerG
             {
                 { ClickBoostI, 1.25 },
                 { ClickBoostII, 1.5 },
-                { ClickBoostIII, 1.75 },
+                { ClickBoostIII, 2 },
                 { ClickBoostIV, 3 },
                 { ClickBoostV, 4 },
-                { AutoClickerI , 1 },
-                { AutoClickerII , 5 },
-                { AutoClickerIII , 10 },
-                { AutoClickerIV , 25 },
-                { AutoClickerV , 50 },
+                { AutoClickerI, 1 },
+                { AutoClickerII, 5 },
+                { AutoClickerIII, 10 },
+                { AutoClickerIV, 25 },
+                { AutoClickerV, 50 },
+                { ClickComboI, 1.5},
+                { ClickComboII, 2},
+                { ClickComboIII, 3},
+                { LuckyDiamondsI, 2 },
+                { LuckyDiamondsII, 3 },
+                { LuckyDiamondsIII, 4 },
+                { LuckyDiamondsIV, 5 },
+                { LuckyDiamondsV, 10 },
+                { DiamondBoostI, 2 },
+                { DiamondBoostII, 3 },
+                { DiamondBoostIII, 4 },
+                { DiamondBoostIV, 5 },
+                { BalanceDoublerI, 3000 },
+                { BalanceDoublerII, 5000 },
+                { BalanceDoublerIII, 7000 },
+                { DiamondRushI, 3000 },
+                { DiamondRushII, 5000 },
+                { DiamondRushIII, 7000 },
+                { DiamondRushIV, 10000 },
             };
 
             foreach (var upgrade in upgradeCosts)
@@ -149,6 +168,26 @@ namespace AutoClickerG
                                 if (localUpgrade.Key == AutoClickerI || localUpgrade.Key == AutoClickerII || localUpgrade.Key == AutoClickerIII || localUpgrade.Key == AutoClickerIV || localUpgrade.Key == AutoClickerV)
                                 {
                                     GlobalVariables.AutoClickerValue = upgradeRewards[localUpgrade.Key];
+                                }
+                                if (localUpgrade.Key == ClickComboI || localUpgrade.Key == ClickComboII || localUpgrade.Key == ClickComboIII)
+                                {
+                                    GlobalVariables.ClickComboMultiplier = upgradeRewards[localUpgrade.Key];
+                                }
+                                if (localUpgrade.Key == LuckyDiamondsI || localUpgrade.Key == LuckyDiamondsII || localUpgrade.Key == LuckyDiamondsIII || localUpgrade.Key == LuckyDiamondsIV || localUpgrade.Key == LuckyDiamondsV)
+                                {
+                                    GlobalVariables.DiamondChance = upgradeRewards[localUpgrade.Key];
+                                }  
+                                if (localUpgrade.Key == DiamondBoostI || localUpgrade.Key == DiamondBoostII || localUpgrade.Key == DiamondBoostIII || localUpgrade.Key == DiamondBoostIV)
+                                {
+                                    GlobalVariables.DiamondMultiplier = (int)upgradeRewards[localUpgrade.Key];
+                                }
+                                if (localUpgrade.Key == BalanceDoublerI || localUpgrade.Key == BalanceDoublerII || localUpgrade.Key == BalanceDoublerIII)
+                                {
+                                    GlobalVariables.BalanceDoublerTimer = (int)upgradeRewards[localUpgrade.Key];
+                                }
+                                if (localUpgrade.Key == DiamondRushI || localUpgrade.Key == DiamondRushII || localUpgrade.Key == DiamondRushIII || localUpgrade.Key == DiamondRushIV)
+                                {
+                                    GlobalVariables.DiamondRushTimer = (int)upgradeRewards[localUpgrade.Key];
                                 }
                             }
                         }
