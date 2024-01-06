@@ -30,8 +30,6 @@ namespace AutoClickerG
         /// </summary>
         private void InitializeComponent()
         {
-            Coin = new PictureBox();
-            Diamond = new PictureBox();
             CTEM = new PictureBox();
             CoinGif = new PictureBox();
             Coins = new Label();
@@ -42,40 +40,12 @@ namespace AutoClickerG
             ClickGif = new PictureBox();
             Clicks = new Label();
             BackToMenu = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)Coin).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)Diamond).BeginInit();
             ((System.ComponentModel.ISupportInitialize)CTEM).BeginInit();
             ((System.ComponentModel.ISupportInitialize)CoinGif).BeginInit();
             ((System.ComponentModel.ISupportInitialize)DiamondGif).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ClickGif).BeginInit();
             ((System.ComponentModel.ISupportInitialize)BackToMenu).BeginInit();
             SuspendLayout();
-            // 
-            // Coin
-            // 
-            Coin.BackColor = Color.Transparent;
-            Coin.Cursor = Cursors.No;
-            Coin.Image = Properties.Resources.Coin;
-            Coin.Location = new Point(12, 12);
-            Coin.Name = "Coin";
-            Coin.Size = new Size(140, 140);
-            Coin.SizeMode = PictureBoxSizeMode.AutoSize;
-            Coin.TabIndex = 3;
-            Coin.TabStop = false;
-            Coin.Visible = false;
-            // 
-            // Diamond
-            // 
-            Diamond.BackColor = Color.Transparent;
-            Diamond.Cursor = Cursors.No;
-            Diamond.Image = Properties.Resources.Diamond;
-            Diamond.Location = new Point(12, 158);
-            Diamond.Name = "Diamond";
-            Diamond.Size = new Size(140, 140);
-            Diamond.SizeMode = PictureBoxSizeMode.CenterImage;
-            Diamond.TabIndex = 83;
-            Diamond.TabStop = false;
-            Diamond.Visible = false;
             // 
             // CTEM
             // 
@@ -190,8 +160,6 @@ namespace AutoClickerG
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Moccasin;
             ClientSize = new Size(1920, 1061);
-            Controls.Add(Coin);
-            Controls.Add(Diamond);
             Controls.Add(CTEM);
             Controls.Add(CoinGif);
             Controls.Add(Coins);
@@ -204,8 +172,6 @@ namespace AutoClickerG
             Controls.Add(BackToMenu);
             Name = "Play";
             Text = "Play";
-            ((System.ComponentModel.ISupportInitialize)Coin).EndInit();
-            ((System.ComponentModel.ISupportInitialize)Diamond).EndInit();
             ((System.ComponentModel.ISupportInitialize)CTEM).EndInit();
             ((System.ComponentModel.ISupportInitialize)CoinGif).EndInit();
             ((System.ComponentModel.ISupportInitialize)DiamondGif).EndInit();
@@ -216,9 +182,6 @@ namespace AutoClickerG
         }
 
         #endregion
-
-        private PictureBox Coin;
-        private PictureBox Diamond;
         private PictureBox CTEM;
         private PictureBox CoinGif;
         private Label Coins;
