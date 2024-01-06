@@ -7,7 +7,7 @@ public static class GlobalVariables
         get { return coinBalance; }
         set
         {
-            coinBalance = value;
+            coinBalance = Math.Round(value, 3);
             OnCoinBalanceChanged?.Invoke(coinBalance);
         }
     }
@@ -35,5 +35,8 @@ public static class GlobalVariables
     public static double AutoClickerValue { get; set; } = 0;
     public static double ClickComboMultiplier { get; set; } = 0;
     public static int BalanceDoublerTimer { get; set; } = 0;
+    public static int IsBalanceDoublerBought { get; set; } = 0;
     public static int DiamondRushTimer { get; set; } = 0;
+    public static int IsDiamondRushBought { get; set; } = 0;
+    public static bool IsDiamondRushActive { get; set; } = false;
 }

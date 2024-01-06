@@ -125,7 +125,7 @@ namespace AutoClickerG
                 { DiamondBoostII, 3 },
                 { DiamondBoostIII, 4 },
                 { DiamondBoostIV, 5 },
-                { BalanceDoublerI, 3000 },
+                { BalanceDoublerI, 5000 },
                 { BalanceDoublerII, 5000 },
                 { BalanceDoublerIII, 7000 },
                 { DiamondRushI, 3000 },
@@ -150,7 +150,7 @@ namespace AutoClickerG
                         if (dialogResult == DialogResult.Yes)
                         {
                             GlobalVariables.CoinBalance -= localUpgrade.Value;
-                            CoinBalance.Text = GlobalVariables.CoinBalance.ToString();
+                            CoinBalance.Text = ": " + GlobalVariables.CoinBalance.ToString();
                             localUpgrade.Key.BackColor = Color.Green;
                             upgradesPurchased[localUpgrade.Key] = true;
                             localUpgrade.Key.Enabled = false;
@@ -184,10 +184,12 @@ namespace AutoClickerG
                                 if (localUpgrade.Key == BalanceDoublerI || localUpgrade.Key == BalanceDoublerII || localUpgrade.Key == BalanceDoublerIII)
                                 {
                                     GlobalVariables.BalanceDoublerTimer = (int)upgradeRewards[localUpgrade.Key];
+                                    GlobalVariables.IsBalanceDoublerBought = 1;
                                 }
                                 if (localUpgrade.Key == DiamondRushI || localUpgrade.Key == DiamondRushII || localUpgrade.Key == DiamondRushIII || localUpgrade.Key == DiamondRushIV)
                                 {
                                     GlobalVariables.DiamondRushTimer = (int)upgradeRewards[localUpgrade.Key];
+                                    GlobalVariables.IsDiamondRushBought = 1;
                                 }
                             }
                         }
@@ -201,12 +203,12 @@ namespace AutoClickerG
         }
         private void Upgrades_Load(object sender, EventArgs e)
         {
-            CoinBalance.Text = GlobalVariables.CoinBalance.ToString();
-            DiamondBalance.Text = GlobalVariables.DiamondBalance.ToString();
+            CoinBalance.Text = ": " + GlobalVariables.CoinBalance.ToString();
+            DiamondBalance.Text = ": " + GlobalVariables.DiamondBalance.ToString();
 
             GlobalVariables.OnCoinBalanceChanged += balance =>
             {
-                CoinBalance.Text = balance.ToString();
+                CoinBalance.Text = ": " + balance.ToString();
 
                 foreach (var upgrade in upgradeCosts)
                 {
@@ -222,6 +224,11 @@ namespace AutoClickerG
                         }
                     }
                 }
+            };
+
+            GlobalVariables.OnDiamondBalanceChanged += balance =>
+            {
+                DiamondBalance.Text = ": " + balance.ToString();
             };
 
             foreach (var upgrade in upgradeCosts)

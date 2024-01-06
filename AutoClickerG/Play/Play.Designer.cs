@@ -87,7 +87,7 @@ namespace AutoClickerG
             ClickMultiplier.AutoSize = true;
             ClickMultiplier.Font = new Font("Bernard MT Condensed", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             ClickMultiplier.ForeColor = Color.Salmon;
-            ClickMultiplier.Location = new Point(1050, 435);
+            ClickMultiplier.Location = new Point(985, 435);
             ClickMultiplier.Name = "ClickMultiplier";
             ClickMultiplier.Size = new Size(18, 41);
             ClickMultiplier.TabIndex = 5;
@@ -119,7 +119,7 @@ namespace AutoClickerG
             DiamondMultiplier.AutoSize = true;
             DiamondMultiplier.Font = new Font("Bernard MT Condensed", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             DiamondMultiplier.ForeColor = Color.Salmon;
-            DiamondMultiplier.Location = new Point(1050, 535);
+            DiamondMultiplier.Location = new Point(985, 535);
             DiamondMultiplier.Name = "DiamondMultiplier";
             DiamondMultiplier.Size = new Size(18, 41);
             DiamondMultiplier.TabIndex = 83;
@@ -130,7 +130,7 @@ namespace AutoClickerG
             DiamondChance.AutoSize = true;
             DiamondChance.Font = new Font("Bernard MT Condensed", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             DiamondChance.ForeColor = Color.Salmon;
-            DiamondChance.Location = new Point(1050, 635);
+            DiamondChance.Location = new Point(985, 635);
             DiamondChance.Name = "DiamondChance";
             DiamondChance.Size = new Size(18, 41);
             DiamondChance.TabIndex = 82;
@@ -162,7 +162,7 @@ namespace AutoClickerG
             BackToMenu.Image = Properties.Resources.BackToMenu;
             BackToMenu.Location = new Point(480, 820);
             BackToMenu.Name = "BackToMenu";
-            BackToMenu.Size = new Size(960, 112);
+            BackToMenu.Size = new Size(960, 125);
             BackToMenu.SizeMode = PictureBoxSizeMode.CenterImage;
             BackToMenu.TabIndex = 4;
             BackToMenu.TabStop = false;
@@ -172,7 +172,7 @@ namespace AutoClickerG
             // 
             BalanceDoublerButton.BackColor = Color.LightCoral;
             BalanceDoublerButton.Font = new Font("Segoe UI", 10F);
-            BalanceDoublerButton.Location = new Point(640, 727);
+            BalanceDoublerButton.Location = new Point(765, 727);
             BalanceDoublerButton.Name = "BalanceDoublerButton";
             BalanceDoublerButton.Size = new Size(170, 70);
             BalanceDoublerButton.TabIndex = 84;
@@ -183,7 +183,7 @@ namespace AutoClickerG
             // 
             DiamondRushButton.BackColor = Color.LightCoral;
             DiamondRushButton.Font = new Font("Segoe UI", 10F);
-            DiamondRushButton.Location = new Point(1050, 727);
+            DiamondRushButton.Location = new Point(985, 727);
             DiamondRushButton.Name = "DiamondRushButton";
             DiamondRushButton.Size = new Size(170, 70);
             DiamondRushButton.TabIndex = 85;

@@ -15,6 +15,11 @@ namespace AutoClickerG
         private System.Windows.Forms.Timer autoClickerTimer;
         private System.Windows.Forms.Timer clickComboTimer;
         private double initialClickMultiplier;
+        private System.Windows.Forms.Timer balanceDoublerTimer;
+        private DateTime balanceDoublerCooldownStartTime;
+        private System.Windows.Forms.Timer diamondRushTimer;
+        private DateTime diamondRushCooldownStartTime;
+        private System.Windows.Forms.Timer cooldownTimer;
         private Random random = new Random();
         public Play()
         {
@@ -43,9 +48,83 @@ namespace AutoClickerG
             clickComboTimer.Interval = 1000;
             clickComboTimer.Tick += (sender, e) =>
             {
-                GlobalVariables.ClickMultiplier = initialClickMultiplier;
+                if (BalanceDoublerButton.BackColor == Color.Green)
+                {
+                    GlobalVariables.ClickMultiplier = initialClickMultiplier * 2;
+                }
+                else
+                {
+                    GlobalVariables.ClickMultiplier = initialClickMultiplier;
+                }
                 ClickMultiplier.Text = "Click Multiplier: " + GlobalVariables.ClickMultiplier.ToString() + "x";
                 clickComboTimer.Stop();
+            };
+
+            if (GlobalVariables.IsBalanceDoublerBought == 1)
+            {
+                BalanceDoublerButton.BackColor = Color.Orange;
+            }
+            BalanceDoublerButton.Click += BalanceDoublerButton_Click;
+            balanceDoublerTimer = new System.Windows.Forms.Timer();
+            if (GlobalVariables.BalanceDoublerTimer > 0)
+            {
+                balanceDoublerTimer.Interval = GlobalVariables.BalanceDoublerTimer;
+                balanceDoublerTimer.Tick += (sender, e) =>
+                {
+                    GlobalVariables.ClickMultiplier = initialClickMultiplier;
+                    GlobalVariables.DiamondMultiplier /= 2;
+
+                    ClickMultiplier.Text = "Click Multiplier: " + GlobalVariables.ClickMultiplier.ToString() + "x";
+                    DiamondMultiplier.Text = "Diamond Multiplier: " + GlobalVariables.DiamondMultiplier.ToString() + "x";
+
+                    BalanceDoublerButton.BackColor = Color.LightCoral;
+                    balanceDoublerCooldownStartTime = DateTime.Now;
+
+                    balanceDoublerTimer.Stop();
+                    cooldownTimer.Start();
+                };
+            }
+
+            if (GlobalVariables.IsDiamondRushBought == 1)
+            {
+                DiamondRushButton.BackColor = Color.Orange;
+            }
+            DiamondRushButton.Click += DiamondRushButton_Click;
+            diamondRushTimer = new System.Windows.Forms.Timer();
+            if (GlobalVariables.DiamondRushTimer > 0)
+            {
+                diamondRushTimer.Interval = GlobalVariables.DiamondRushTimer;
+                diamondRushTimer.Tick += (sender, e) =>
+                {
+                    GlobalVariables.IsDiamondRushActive = false;
+                    DiamondChance.Text = "Diamond Chance: " + GlobalVariables.DiamondChance.ToString() + "%";
+                    DiamondRushButton.BackColor = Color.LightCoral;
+                    diamondRushCooldownStartTime = DateTime.Now;
+
+                    diamondRushTimer.Stop();
+                    cooldownTimer.Start();
+                };
+            }
+
+            cooldownTimer = new System.Windows.Forms.Timer();
+            cooldownTimer.Interval = 10000;
+            cooldownTimer.Tick += (s, args) =>
+            {
+                if (BalanceDoublerButton.BackColor == Color.LightCoral)
+                {
+                    if (GlobalVariables.IsBalanceDoublerBought == 1)
+                    {
+                        BalanceDoublerButton.BackColor = Color.Orange;
+                    }
+                }
+                if (DiamondRushButton.BackColor == Color.LightCoral)
+                {
+                    if (GlobalVariables.IsDiamondRushBought == 1)
+                    {
+                        DiamondRushButton.BackColor = Color.Orange;
+                    }
+                }
+                cooldownTimer.Stop();
             };
         }
 
@@ -56,6 +135,10 @@ namespace AutoClickerG
 
             double maxMultiplier = initialClickMultiplier * GlobalVariables.ClickComboMultiplier;
 
+            if (BalanceDoublerButton.BackColor == Color.Green && GlobalVariables.ClickComboMultiplier > 1)
+            {
+                maxMultiplier *= 2;
+            }
             if (GlobalVariables.ClickMultiplier < maxMultiplier)
             {
                 double increment = (maxMultiplier - initialClickMultiplier) / 10;
@@ -70,13 +153,82 @@ namespace AutoClickerG
             clickComboTimer.Stop();
             clickComboTimer.Start();
 
-            if (random.Next(100) < GlobalVariables.DiamondChance)
+            if (GlobalVariables.IsDiamondRushActive || random.Next(100) < GlobalVariables.DiamondChance)
             {
                 GlobalVariables.DiamondBalance += GlobalVariables.DiamondMultiplier;
                 Diamonds.Text = ": " + GlobalVariables.DiamondBalance.ToString();
             }
         }
 
+        private void BalanceDoublerButton_Click(object sender, EventArgs e)
+        {
+            if (BalanceDoublerButton.BackColor == Color.Orange)
+            {
+                DialogResult result = MessageBox.Show("Do you want to use Balance Doubler?", "Confirmation", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    BalanceDoublerButton.BackColor = Color.Green;
+                    initialClickMultiplier = GlobalVariables.ClickMultiplier;
+                    GlobalVariables.ClickMultiplier *= 2;
+                    GlobalVariables.DiamondMultiplier *= 2;
+                    ClickMultiplier.Text = "Click Multiplier: " + GlobalVariables.ClickMultiplier.ToString() + "x";
+                    DiamondMultiplier.Text = "Diamond Multiplier: " + GlobalVariables.DiamondMultiplier.ToString() + "x";
+                    balanceDoublerTimer.Start();
+                }
+            }
+            else if (BalanceDoublerButton.BackColor == Color.Green)
+            {
+                MessageBox.Show("You need to wait for the current Balance Doubler to finish...", "Information", MessageBoxButtons.OK);
+            }
+            else if (BalanceDoublerButton.BackColor == Color.LightCoral)
+            {
+                if (GlobalVariables.IsBalanceDoublerBought == 1)
+                {
+                    var remainingTime = Math.Round((cooldownTimer.Interval / 1000) - (DateTime.Now - balanceDoublerCooldownStartTime).TotalSeconds);
+                    if (remainingTime < 0)
+                    {
+                        remainingTime = 0;
+                    }
+                    MessageBox.Show($"You need to wait for {remainingTime} seconds...", "Information", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    MessageBox.Show("Firstly you need to buy this upgrade", "Information", MessageBoxButtons.OK);
+                }
+            }
+        }
+
+        private void DiamondRushButton_Click(object sender, EventArgs e)
+        {
+            if (DiamondRushButton.BackColor == Color.Orange)
+            {
+                DialogResult result = MessageBox.Show("Do you want to use Diamond Rush?", "Confirmation", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    DiamondRushButton.BackColor = Color.Green;
+                    GlobalVariables.IsDiamondRushActive = true;
+                    DiamondChance.Text = "Diamond Chance: 100%";
+                    diamondRushTimer.Start();
+                }
+            }
+            else if (DiamondRushButton.BackColor == Color.Green)
+            {
+                MessageBox.Show("You need to wait for the current Diamond Rush to finish...", "Information", MessageBoxButtons.OK);
+            }
+            else if (DiamondRushButton.BackColor == Color.LightCoral)
+            {
+                if (GlobalVariables.IsDiamondRushBought == 1)
+                {
+                    var remainingTime = Math.Round((cooldownTimer.Interval / 1000) - (DateTime.Now - diamondRushCooldownStartTime).TotalSeconds);
+                    MessageBox.Show($"You need to wait for {remainingTime} seconds...", "Information", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    MessageBox.Show("Firstly you need to buy this upgrade", "Information", MessageBoxButtons.OK);
+                }
+            }
+        }
+        
         private void BackToMenu_Click(object sender, EventArgs e)
         {
             Menu menu = new Menu();
