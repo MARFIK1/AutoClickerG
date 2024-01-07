@@ -16,10 +16,11 @@ namespace AutoClickerG
         private System.Windows.Forms.Timer clickComboTimer;
         private double initialClickMultiplier;
         private System.Windows.Forms.Timer balanceDoublerTimer;
+        private System.Windows.Forms.Timer balanceDoublerCooldownTimer;
         private DateTime balanceDoublerCooldownStartTime;
         private System.Windows.Forms.Timer diamondRushTimer;
+        private System.Windows.Forms.Timer diamondRushCooldownTimer;
         private DateTime diamondRushCooldownStartTime;
-        private System.Windows.Forms.Timer cooldownTimer;
         private Random random = new Random();
         public Play()
         {
@@ -60,6 +61,20 @@ namespace AutoClickerG
                 clickComboTimer.Stop();
             };
 
+            System.Windows.Forms.Timer balanceDoublerCooldownTimer = new System.Windows.Forms.Timer();
+            balanceDoublerCooldownTimer.Interval = 10000;
+            balanceDoublerCooldownTimer.Tick += (s, args) =>
+            {
+                if (BalanceDoublerButton.BackColor == Color.LightCoral)
+                {
+                    if (GlobalVariables.IsBalanceDoublerBought == 1)
+                    {
+                        BalanceDoublerButton.BackColor = Color.Orange;
+                    }
+                }
+                balanceDoublerCooldownTimer.Stop();
+            };
+
             if (GlobalVariables.IsBalanceDoublerBought == 1)
             {
                 BalanceDoublerButton.BackColor = Color.Orange;
@@ -81,9 +96,23 @@ namespace AutoClickerG
                     balanceDoublerCooldownStartTime = DateTime.Now;
 
                     balanceDoublerTimer.Stop();
-                    cooldownTimer.Start();
+                    balanceDoublerCooldownTimer.Start();
                 };
             }
+
+            System.Windows.Forms.Timer diamondRushCooldownTimer = new System.Windows.Forms.Timer();
+            diamondRushCooldownTimer.Interval = 10000;
+            diamondRushCooldownTimer.Tick += (s, args) =>
+            {
+                if (DiamondRushButton.BackColor == Color.LightCoral)
+                {
+                    if (GlobalVariables.IsDiamondRushBought == 1)
+                    {
+                        DiamondRushButton.BackColor = Color.Orange;
+                    }
+                }
+                diamondRushCooldownTimer.Stop();
+            };
 
             if (GlobalVariables.IsDiamondRushBought == 1)
             {
@@ -102,30 +131,9 @@ namespace AutoClickerG
                     diamondRushCooldownStartTime = DateTime.Now;
 
                     diamondRushTimer.Stop();
-                    cooldownTimer.Start();
+                    diamondRushCooldownTimer.Start();
                 };
             }
-
-            cooldownTimer = new System.Windows.Forms.Timer();
-            cooldownTimer.Interval = 10000;
-            cooldownTimer.Tick += (s, args) =>
-            {
-                if (BalanceDoublerButton.BackColor == Color.LightCoral)
-                {
-                    if (GlobalVariables.IsBalanceDoublerBought == 1)
-                    {
-                        BalanceDoublerButton.BackColor = Color.Orange;
-                    }
-                }
-                if (DiamondRushButton.BackColor == Color.LightCoral)
-                {
-                    if (GlobalVariables.IsDiamondRushBought == 1)
-                    {
-                        DiamondRushButton.BackColor = Color.Orange;
-                    }
-                }
-                cooldownTimer.Stop();
-            };
         }
 
         private void CTEM_Click(object sender, EventArgs e)
@@ -184,7 +192,7 @@ namespace AutoClickerG
             {
                 if (GlobalVariables.IsBalanceDoublerBought == 1)
                 {
-                    var remainingTime = Math.Round((cooldownTimer.Interval / 1000) - (DateTime.Now - balanceDoublerCooldownStartTime).TotalSeconds);
+                    var remainingTime = Math.Round((balanceDoublerCooldownTimer.Interval / 1000) - (DateTime.Now - balanceDoublerCooldownStartTime).TotalSeconds);
                     if (remainingTime < 0)
                     {
                         remainingTime = 0;
@@ -219,7 +227,7 @@ namespace AutoClickerG
             {
                 if (GlobalVariables.IsDiamondRushBought == 1)
                 {
-                    var remainingTime = Math.Round((cooldownTimer.Interval / 1000) - (DateTime.Now - diamondRushCooldownStartTime).TotalSeconds);
+                    var remainingTime = Math.Round((diamondRushCooldownTimer.Interval / 1000) - (DateTime.Now - diamondRushCooldownStartTime).TotalSeconds);
                     MessageBox.Show($"You need to wait for {remainingTime} seconds...", "Information", MessageBoxButtons.OK);
                 }
                 else

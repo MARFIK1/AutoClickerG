@@ -847,7 +847,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Moccasin;
-            ClientSize = new Size(1920, 1061);
+            ClientSize = new Size(1904, 1041);
             Controls.Add(DiamondBalance);
             Controls.Add(CoinBalance);
             Controls.Add(Diamonds);

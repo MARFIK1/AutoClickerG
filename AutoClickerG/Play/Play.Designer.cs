@@ -53,9 +53,9 @@ namespace AutoClickerG
             // CTEM
             // 
             CTEM.Image = Properties.Resources.CoinToClick;
-            CTEM.Location = new Point(783, 92);
+            CTEM.Location = new Point(805, 100);
             CTEM.Name = "CTEM";
-            CTEM.Size = new Size(295, 311);
+            CTEM.Size = new Size(300, 300);
             CTEM.SizeMode = PictureBoxSizeMode.CenterImage;
             CTEM.TabIndex = 0;
             CTEM.TabStop = false;
@@ -160,10 +160,10 @@ namespace AutoClickerG
             // BackToMenu
             // 
             BackToMenu.Image = Properties.Resources.BackToMenu;
-            BackToMenu.Location = new Point(480, 820);
+            BackToMenu.Location = new Point(744, 844);
             BackToMenu.Name = "BackToMenu";
-            BackToMenu.Size = new Size(960, 125);
-            BackToMenu.SizeMode = PictureBoxSizeMode.CenterImage;
+            BackToMenu.Size = new Size(432, 50);
+            BackToMenu.SizeMode = PictureBoxSizeMode.Zoom;
             BackToMenu.TabIndex = 4;
             BackToMenu.TabStop = false;
             BackToMenu.Click += BackToMenu_Click;
@@ -195,7 +195,7 @@ namespace AutoClickerG
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Moccasin;
-            ClientSize = new Size(1920, 1061);
+            ClientSize = new Size(1904, 1041);
             Controls.Add(DiamondRushButton);
             Controls.Add(BalanceDoublerButton);
             Controls.Add(CTEM);

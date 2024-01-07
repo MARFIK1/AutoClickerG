@@ -33,13 +33,8 @@ namespace AutoClickerG
         {
             InitializeComponent();
             this.Load += Upgrades_Load;
-            this.Size = new Size(1920, 1080);
             this.WindowState = FormWindowState.Maximized;
             this.FormBorderStyle = FormBorderStyle.None;
-            Panel draggablePanel = new Panel();
-            draggablePanel.Size = new Size(1920, 1080);
-            draggablePanel.AutoScroll = true;
-            this.Controls.Add(draggablePanel);
             BackToMenu.Click += BackToMenu_Click;
 
             upgradeCosts = new Dictionary<Button, int>()

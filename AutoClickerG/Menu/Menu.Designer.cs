@@ -112,7 +112,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Moccasin;
-            ClientSize = new Size(1920, 1080);
+            ClientSize = new Size(1904, 1041);
             Controls.Add(exit);
             Controls.Add(options);
             Controls.Add(achievements);
