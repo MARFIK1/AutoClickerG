@@ -129,6 +129,17 @@ namespace AutoClickerG
                 { DiamondRushIV, 10000 },
             };
 
+            Dictionary<List<Button>, bool> categoryProgressAdded = new Dictionary<List<Button>, bool>
+            {
+                { new List<Button> { ClickBoostI, ClickBoostII, ClickBoostIII, ClickBoostIV, ClickBoostV }, false },
+                { new List<Button> { AutoClickerI, AutoClickerII, AutoClickerIII, AutoClickerIV, AutoClickerV }, false },
+                { new List<Button> { ClickComboI, ClickComboII, ClickComboIII }, false },
+                { new List<Button> { LuckyDiamondsI, LuckyDiamondsII, LuckyDiamondsIII, LuckyDiamondsIV, LuckyDiamondsV }, false },
+                { new List<Button> { DiamondBoostI, DiamondBoostII, DiamondBoostIII, DiamondBoostIV }, false },
+                { new List<Button> { BalanceDoublerI, BalanceDoublerII, BalanceDoublerIII }, false },
+                { new List<Button> { DiamondRushI, DiamondRushII, DiamondRushIII, DiamondRushIV }, false }
+            };
+
             foreach (var upgrade in upgradeCosts)
             {
                 upgradesPurchased.Add(upgrade.Key, false);
@@ -185,6 +196,37 @@ namespace AutoClickerG
                                 {
                                     GlobalVariables.DiamondRushTimer = (int)upgradeRewards[localUpgrade.Key];
                                     GlobalVariables.IsDiamondRushBought = 1;
+                                }
+                            }
+
+                            for (int i = 20; i < 23; i++)
+                            {
+                                var achievement = GlobalVariables.Achievements[i];
+                                if (!achievement.IsCollected)
+                                {
+                                    achievement.AddProgress(1);
+                                }
+                            }
+
+                            foreach (var category in categoryProgressAdded.Keys.ToList())
+                            {
+                                bool allUpgradesPurchased = category.All(b => upgradesPurchased.ContainsKey(b) && upgradesPurchased[b]);
+
+                                if (allUpgradesPurchased && !categoryProgressAdded[category])
+                                {
+                                    for (int i = 23; i < 25; i++)
+                                    {
+                                        var achievement = GlobalVariables.Achievements[i];
+                                        if (!achievement.IsCollected)
+                                        {
+                                            achievement.AddProgress(1);
+                                        }
+                                    }
+                                    categoryProgressAdded[category] = true;
+                                }
+                                else if (!allUpgradesPurchased && categoryProgressAdded[category])
+                                {
+                                    categoryProgressAdded[category] = false;
                                 }
                             }
                         }

@@ -21,6 +21,8 @@ namespace AutoClickerG
         private System.Windows.Forms.Timer diamondRushTimer;
         private System.Windows.Forms.Timer diamondRushCooldownTimer;
         private DateTime diamondRushCooldownStartTime;
+        private System.Windows.Forms.Timer playTimeTimer;
+        private DateTime playStartTime;
         private Random random = new Random();
         public Play()
         {
@@ -39,7 +41,19 @@ namespace AutoClickerG
             autoClickerTimer.Tick += (sender, e) =>
             {
                 GlobalVariables.CoinBalance += GlobalVariables.AutoClickerValue;
+                GlobalVariables.TotalCoinsEarned += GlobalVariables.AutoClickerValue;
                 Coins.Text = ": " + GlobalVariables.CoinBalance.ToString();
+
+                for (int i = 0; i < 5; i++)
+                {
+                    var achievement = GlobalVariables.Achievements[i];
+                    if (!achievement.IsCollected)
+                    {
+                        achievement.AddProgress(GlobalVariables.TotalCoinsEarned);
+                    }
+                }
+
+                GlobalVariables.TotalCoinsEarned = 0;
             };
             autoClickerTimer.Start();
 
@@ -61,7 +75,7 @@ namespace AutoClickerG
                 clickComboTimer.Stop();
             };
 
-            System.Windows.Forms.Timer balanceDoublerCooldownTimer = new System.Windows.Forms.Timer();
+            balanceDoublerCooldownTimer = new System.Windows.Forms.Timer();
             balanceDoublerCooldownTimer.Interval = 10000;
             balanceDoublerCooldownTimer.Tick += (s, args) =>
             {
@@ -100,7 +114,7 @@ namespace AutoClickerG
                 };
             }
 
-            System.Windows.Forms.Timer diamondRushCooldownTimer = new System.Windows.Forms.Timer();
+            diamondRushCooldownTimer = new System.Windows.Forms.Timer();
             diamondRushCooldownTimer.Interval = 10000;
             diamondRushCooldownTimer.Tick += (s, args) =>
             {
@@ -134,12 +148,31 @@ namespace AutoClickerG
                     diamondRushCooldownTimer.Start();
                 };
             }
+
+            playTimeTimer = new System.Windows.Forms.Timer();
+            playTimeTimer.Interval = 1000;
+            playTimeTimer.Tick += (sender, e) =>
+            {
+                for (int i = 25; i < 28; i++)
+                {
+                    var achievement = GlobalVariables.Achievements[i];
+                    if (!achievement.IsCollected)
+                    {
+                        achievement.AddProgress(1);
+                    }
+                }
+            };
+            playStartTime = DateTime.Now;
+            playTimeTimer.Start();
         }
 
         private void CTEM_Click(object sender, EventArgs e)
-        {
-            GlobalVariables.CoinBalance = Math.Round(GlobalVariables.CoinBalance + 1 * GlobalVariables.ClickMultiplier, 3);
+        {   
+            double coinsEarned = Math.Truncate(1 * GlobalVariables.ClickMultiplier * 10000) / 10000;
+            int diamondsEarned;
+            GlobalVariables.CoinBalance = Math.Truncate((GlobalVariables.CoinBalance + 1 * GlobalVariables.ClickMultiplier) * 10000) / 10000;
             GlobalVariables.ClickCounter++;
+            GlobalVariables.TotalCoinsEarned += coinsEarned;
 
             double maxMultiplier = initialClickMultiplier * GlobalVariables.ClickComboMultiplier;
 
@@ -150,7 +183,7 @@ namespace AutoClickerG
             if (GlobalVariables.ClickMultiplier < maxMultiplier)
             {
                 double increment = (maxMultiplier - initialClickMultiplier) / 10;
-                GlobalVariables.ClickMultiplier = Math.Min(maxMultiplier, Math.Round(GlobalVariables.ClickMultiplier + increment, 3));
+                GlobalVariables.ClickMultiplier = Math.Min(maxMultiplier, Math.Truncate((GlobalVariables.ClickMultiplier + increment) * 10000) / 10000);
             }
 
             Coins.Text = ": " + GlobalVariables.CoinBalance.ToString();
@@ -163,8 +196,52 @@ namespace AutoClickerG
 
             if (GlobalVariables.IsDiamondRushActive || random.Next(100) < GlobalVariables.DiamondChance)
             {
-                GlobalVariables.DiamondBalance += GlobalVariables.DiamondMultiplier;
+                diamondsEarned = GlobalVariables.DiamondMultiplier;
+                GlobalVariables.DiamondBalance += diamondsEarned;
+                GlobalVariables.TotalDiamondsEarned += diamondsEarned;
                 Diamonds.Text = ": " + GlobalVariables.DiamondBalance.ToString();
+                for (int i = 5; i < 9; i++)
+                {
+                    var achievement = GlobalVariables.Achievements[i];
+                    if (!achievement.IsCollected)
+                    {
+                        achievement.AddProgress(GlobalVariables.TotalDiamondsEarned);
+                    }
+                }
+                GlobalVariables.TotalDiamondsEarned = 0;
+            }
+
+            for (int i = 0; i < 5; i++)
+            {
+                var achievement = GlobalVariables.Achievements[i];
+                if (!achievement.IsCollected)
+                {
+                    achievement.AddProgress(GlobalVariables.TotalCoinsEarned);
+                }
+            }
+
+            GlobalVariables.TotalCoinsEarned = 0;
+
+            for (int i = 9; i < 13; i++)
+            {
+                var achievement = GlobalVariables.Achievements[i];
+                if (!achievement.IsCollected)
+                {
+                    achievement.AddProgress(1);
+                }
+            }
+
+            if (GlobalVariables.ClickMultiplier > GlobalVariables.HighestClickMultiplier)
+            {
+                GlobalVariables.HighestClickMultiplier = GlobalVariables.ClickMultiplier;
+            }
+            for (int i = 13; i < 16; i++)
+            {
+                var achievement = GlobalVariables.Achievements[i];
+                if (!achievement.IsCollected)
+                {
+                    achievement.Progress = GlobalVariables.HighestClickMultiplier;
+                }
             }
         }
 
@@ -182,6 +259,14 @@ namespace AutoClickerG
                     ClickMultiplier.Text = "Click Multiplier: " + GlobalVariables.ClickMultiplier.ToString() + "x";
                     DiamondMultiplier.Text = "Diamond Multiplier: " + GlobalVariables.DiamondMultiplier.ToString() + "x";
                     balanceDoublerTimer.Start();
+                    for (int i = 16; i < 18; i++)
+                    {
+                        var achievement = GlobalVariables.Achievements[i];
+                        if (!achievement.IsCollected)
+                        {
+                            achievement.AddProgress(1);
+                        }
+                    }
                 }
             }
             else if (BalanceDoublerButton.BackColor == Color.Green)
@@ -217,6 +302,14 @@ namespace AutoClickerG
                     GlobalVariables.IsDiamondRushActive = true;
                     DiamondChance.Text = "Diamond Chance: 100%";
                     diamondRushTimer.Start();
+                    for (int i = 18; i < 20; i++)
+                    {
+                        var achievement = GlobalVariables.Achievements[i];
+                        if (!achievement.IsCollected)
+                        {
+                            achievement.AddProgress(1);
+                        }
+                    }
                 }
             }
             else if (DiamondRushButton.BackColor == Color.Green)
@@ -243,6 +336,7 @@ namespace AutoClickerG
             menu.Show();
             this.Hide();
             autoClickerTimer.Stop();
+            playTimeTimer.Stop();
         }
     }
 }

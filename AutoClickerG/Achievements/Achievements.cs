@@ -12,7 +12,6 @@ namespace AutoClickerG
 {
     public partial class Achievements : Form
     {
-        private List<Achievement> achievements;
         public Achievements()
         {
             InitializeComponent();
@@ -20,66 +19,57 @@ namespace AutoClickerG
             this.FormBorderStyle = FormBorderStyle.None;
             BackToMenu.Click += BackToMenu_Click;
 
-            achievements = new List<Achievement>
+            for (int i = 0; i < GlobalVariables.Achievements.Count; i++)
             {
-                new Achievement("First Step - Earn your first coin.", 1),
-                new Achievement("Gold Stream - Earn 10 coins.", 10),
-                new Achievement("Gold Rain - Earn 100 coins.", 100),
-                new Achievement("Gold Tsunami - Earn 500 coins.", 500),
-                new Achievement("Midas Wealth - Earn 1000 coins.", 1000),
-                new Achievement("First Diamond - Earn your first diamond.", 1),
-                new Achievement("Diamond Rain - Earn 10 diamonds.", 10),
-                new Achievement("Diamond Avalanche - Earn 50 diamonds.", 50),
-                new Achievement("Diamond Crown - Earn 100 diamonds.", 100),
-                new Achievement("First Click - Make your first click.", 1),
-                new Achievement("Engaged Player - Make 50 clicks.", 50),
-                new Achievement("Click Master - Make 100 clicks.", 100),
-                new Achievement("Fortuna Goddess - Make 500 clicks.", 500),
-                new Achievement("Combo Beginner - Achieve 3x combo multiplier.", 3),
-                new Achievement("Combo Master - Achieve 5x combo multiplier.", 5),
-                new Achievement("Combo God - Achieve 10x combo multiplier.", 10),
-                new Achievement("Balance Doubler - Use Balance Doubler for the first time.", 1),
-                new Achievement("Balance Multiplier - Use Balance Doubler 3 times.", 3),
-                new Achievement("Diamond Rush - Use Diamond Rush for the first time.", 1),
-                new Achievement("Diamond Multiplier - Use Diamond Rush 3 times.", 3),
-                new Achievement("Upgrade Enthusiast - Purchase 5 upgrades.", 5),
-                new Achievement("Upgrade Collector - Purchase 10 upgrades.", 10),
-                new Achievement("Upgrade Hoarder - Purchase 20 upgrades.", 20),
-                new Achievement("Category Master - Fully upgrade a category.", 1),
-                new Achievement("Category God - Fully upgrade 3 categories.", 3),
-                new Achievement("Time Tracker - Play for 1 hour.", 1),
-                new Achievement("Time Lord - Play for 5 hours.", 5),
-                new Achievement("Time God - Play for 10 hours.", 10),
-                new Achievement("Achievement Collector - Collect all other achievements.", 1)
-            };
+                Achievement currentAchievement = GlobalVariables.Achievements[i];
+                Button button = new Button();
+                button.Font = new Font("Bernard MT Condensed", 13.25F);
+                button.Text = $"{GlobalVariables.Achievements[i].Name} [{GlobalVariables.Achievements[i].Progress}/{GlobalVariables.Achievements[i].Goal}]";
+                button.Location = new Point(10, AchievementsText.Height + 30 + i * 30); 
+                button.Size = new Size(this.ClientSize.Width, 30);
+                button.TextAlign = ContentAlignment.MiddleCenter;
+                button.AutoSize = false;
+                button.FlatStyle = FlatStyle.Flat;
+                button.FlatAppearance.BorderSize = 0;
+                button.BackColor = Color.Transparent;
+                button.Cursor = Cursors.Default;
+                currentAchievement.Button = button;
 
-            for (int i = 0; i < achievements.Count; i++)
-            {
-                Label label = new Label();
-                label.Font = new Font("Bernard MT Condensed", 15.25F);
-                label.Text = $"{achievements[i].Name} [{achievements[i].Progress}/{achievements[i].Goal}]";
-                label.Location = new Point(10, AchievementsText.Height + 30 + i * 30); 
-                label.Size = new Size(this.ClientSize.Width, 30);
-                label.TextAlign = ContentAlignment.MiddleCenter;
-                label.AutoSize = false;
-
-                if (!achievements[i].IsCollected)
+                if (!GlobalVariables.Achievements[i].IsCollected)
                 {
-                    if (achievements[i].Progress >= achievements[i].Goal)
+                    if (GlobalVariables.Achievements[i].Progress >= GlobalVariables.Achievements[i].Goal)
                     {
-                        label.ForeColor = Color.Orange;
+                        button.ForeColor = Color.Orange;
                     }
                     else
                     {
-                        label.ForeColor = Color.LightCoral;
+                        button.ForeColor = Color.LightCoral;
                     }
                 }
                 else
                 {
-                    label.ForeColor = Color.Green;
+                    button.ForeColor = Color.Green;
                 }
 
-                this.Controls.Add(label);
+                button.Click += (s, args) =>
+                {
+                    if (currentAchievement.Progress >= currentAchievement.Goal && !currentAchievement.IsCollected)
+                    {
+                        int reward = currentAchievement.ClaimReward();
+                        button.ForeColor = Color.Green;
+                        MessageBox.Show($"You have claimed {reward} diamonds for this achievement!");
+                    }
+                    else if (currentAchievement.IsCollected)
+                    {
+                        MessageBox.Show("You have already claimed the reward for this achievement.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("You have not yet completed this achievement.");
+                    }
+                };
+
+                this.Controls.Add(button);
             }
         }
 
@@ -92,17 +82,70 @@ namespace AutoClickerG
     }
     public class Achievement
     {
+        public Button Button { get; set; }
         public string Name { get; set; }
-        public int Progress { get; set; }
+        public double Progress { get; set; }
         public int Goal { get; set; }
         public bool IsCollected { get; set; }
+        public int Reward { get; set; }
 
-        public Achievement(string name, int goal)
+        public Achievement(string name, int goal, int reward, double initialProgress = 0)
         {
             Name = name;
             Goal = goal;
-            Progress = 0;
+            Reward = reward;
+            Progress = initialProgress;
             IsCollected = false;
+        }
+        public int ClaimReward()
+        {
+            if (Progress >= Goal && !IsCollected)
+            {
+                IsCollected = true;
+                UpdateAchievementCollectorProgress();
+                return Reward;
+            }
+            return 0;
+        }
+
+        public void AddProgress(double amount)
+        {
+            Progress = Math.Truncate((Progress + amount) * 10000) / 10000;
+            Progress = Math.Min(Progress, Goal);
+            UpdateButton();
+        }
+
+        private void UpdateButton()
+        {
+            if (Button != null)
+            {
+                Button.Text = $"{Name} [{Progress}/{Goal}]";
+                if (!IsCollected)
+                {
+                    if (Progress >= Goal)
+                    {
+                        Button.ForeColor = Color.Orange;
+                    }
+                    else
+                    {
+                        Button.ForeColor = Color.LightCoral;
+                    }
+                }
+                else
+                {
+                    Button.ForeColor = Color.Green;
+                }
+            }
+        }
+
+        public void UpdateAchievementCollectorProgress()
+        {
+            var achievementCollector = GlobalVariables.Achievements[28];
+            if (!achievementCollector.IsCollected)
+            {
+                int collectedAchievementsCount = GlobalVariables.Achievements.Count(a => a.IsCollected && a != achievementCollector);
+                achievementCollector.AddProgress(collectedAchievementsCount - achievementCollector.Progress);
+            }
         }
     }
 }
