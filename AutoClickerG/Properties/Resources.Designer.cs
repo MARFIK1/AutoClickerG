@@ -63,6 +63,16 @@ namespace AutoClickerG.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ABOUT {
+            get {
+                object obj = ResourceManager.GetObject("ABOUT", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ACHIEVEMENTS {
             get {
                 object obj = ResourceManager.GetObject("ACHIEVEMENTS", resourceCulture);
@@ -103,29 +113,9 @@ namespace AutoClickerG.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ClickToEarnMoney {
-            get {
-                object obj = ResourceManager.GetObject("ClickToEarnMoney", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Coin {
             get {
                 object obj = ResourceManager.GetObject("Coin", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap CoinToClick {
-            get {
-                object obj = ResourceManager.GetObject("CoinToClick", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,9 +143,9 @@ namespace AutoClickerG.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap OPTIONS {
+        internal static System.Drawing.Bitmap PLAY {
             get {
-                object obj = ResourceManager.GetObject("OPTIONS", resourceCulture);
+                object obj = ResourceManager.GetObject("PLAY", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,9 +153,79 @@ namespace AutoClickerG.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap PLAY {
+        internal static System.Drawing.Bitmap Shop {
             get {
-                object obj = ResourceManager.GetObject("PLAY", resourceCulture);
+                object obj = ResourceManager.GetObject("Shop", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SpinningBox {
+            get {
+                object obj = ResourceManager.GetObject("SpinningBox", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SpinningCube {
+            get {
+                object obj = ResourceManager.GetObject("SpinningCube", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SpinningDonut {
+            get {
+                object obj = ResourceManager.GetObject("SpinningDonut", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SpinningEarth {
+            get {
+                object obj = ResourceManager.GetObject("SpinningEarth", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SpinningObject {
+            get {
+                object obj = ResourceManager.GetObject("SpinningObject", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SpinningStrawberry {
+            get {
+                object obj = ResourceManager.GetObject("SpinningStrawberry", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SpinningVinyl {
+            get {
+                object obj = ResourceManager.GetObject("SpinningVinyl", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

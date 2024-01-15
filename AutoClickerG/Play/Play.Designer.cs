@@ -35,7 +35,7 @@ namespace AutoClickerG
             Coins = new Label();
             ClickMultiplier = new Label();
             DiamondGif = new PictureBox();
-            Diamonds = new Label();
+            DiamondBalance = new Label();
             DiamondMultiplier = new Label();
             DiamondChance = new Label();
             ClickGif = new PictureBox();
@@ -52,11 +52,11 @@ namespace AutoClickerG
             // 
             // CTEM
             // 
-            CTEM.Image = Properties.Resources.CoinToClick;
+            CTEM.Image = Properties.Resources.Coin;
             CTEM.Location = new Point(805, 100);
             CTEM.Name = "CTEM";
             CTEM.Size = new Size(300, 300);
-            CTEM.SizeMode = PictureBoxSizeMode.CenterImage;
+            CTEM.SizeMode = PictureBoxSizeMode.Zoom;
             CTEM.TabIndex = 0;
             CTEM.TabStop = false;
             CTEM.Click += CTEM_Click;
@@ -103,16 +103,16 @@ namespace AutoClickerG
             DiamondGif.TabIndex = 80;
             DiamondGif.TabStop = false;
             // 
-            // Diamonds
+            // DiamondBalance
             // 
-            Diamonds.AutoSize = true;
-            Diamonds.Font = new Font("Bernard MT Condensed", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Diamonds.ForeColor = Color.Salmon;
-            Diamonds.Location = new Point(716, 535);
-            Diamonds.Name = "Diamonds";
-            Diamonds.Size = new Size(18, 41);
-            Diamonds.TabIndex = 81;
-            Diamonds.Text = "\r\n";
+            DiamondBalance.AutoSize = true;
+            DiamondBalance.Font = new Font("Bernard MT Condensed", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            DiamondBalance.ForeColor = Color.Salmon;
+            DiamondBalance.Location = new Point(716, 535);
+            DiamondBalance.Name = "DiamondBalance";
+            DiamondBalance.Size = new Size(18, 41);
+            DiamondBalance.TabIndex = 81;
+            DiamondBalance.Text = "\r\n";
             // 
             // DiamondMultiplier
             // 
@@ -203,7 +203,7 @@ namespace AutoClickerG
             Controls.Add(Coins);
             Controls.Add(ClickMultiplier);
             Controls.Add(DiamondGif);
-            Controls.Add(Diamonds);
+            Controls.Add(DiamondBalance);
             Controls.Add(DiamondMultiplier);
             Controls.Add(DiamondChance);
             Controls.Add(ClickGif);
@@ -226,7 +226,7 @@ namespace AutoClickerG
         private Label Coins;
         private Label ClickMultiplier;
         private PictureBox DiamondGif;
-        private Label Diamonds;
+        private Label DiamondBalance;
         private Label DiamondMultiplier;
         private Label DiamondChance;
         private PictureBox ClickGif;

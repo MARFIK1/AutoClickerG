@@ -121,23 +121,11 @@
   <data name="EXIT" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>images\EXIT.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PLAY" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>images\PLAY.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ABOUT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ABOUT.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="OPTIONS" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>images\OPTIONS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="AutoClicker" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>images\AutoClicker.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ACHIEVEMENTS" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>images\ACHIEVEMENTS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="UpgradeArrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>images\UpgradeArrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="BackToMenu" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>images\BackToMenu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="SpinningObject" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\SpinningObject.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Diamond" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>images\Diamond.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -145,16 +133,46 @@
   <data name="Coin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>images\Coin.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="CoinToClick" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>images\CoinToClick.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="SpinningStrawberry" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\SpinningStrawberry.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ClickToEarnMoney" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>images\ClickToEarnMoney.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BackToMenu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\BackToMenu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\Click.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Shop" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\Shop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PLAY" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\PLAY.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SpinningEarth" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\SpinningEarth.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AutoClicker" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\AutoClicker.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SpinningVinyl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\SpinningVinyl.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SpinningCube" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\SpinningCube.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SpinningBox" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\SpinningBox.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ACHIEVEMENTS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\ACHIEVEMENTS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UpgradeArrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\UpgradeArrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="UPGRADES" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>images\UPGRADES.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>images\Click.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="SpinningDonut" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\SpinningDonut.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

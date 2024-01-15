@@ -32,14 +32,16 @@
             play = new PictureBox();
             upgrades = new PictureBox();
             achievements = new PictureBox();
-            options = new PictureBox();
+            about = new PictureBox();
             exit = new PictureBox();
+            shop = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)AutoClicker).BeginInit();
             ((System.ComponentModel.ISupportInitialize)play).BeginInit();
             ((System.ComponentModel.ISupportInitialize)upgrades).BeginInit();
             ((System.ComponentModel.ISupportInitialize)achievements).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)options).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)about).BeginInit();
             ((System.ComponentModel.ISupportInitialize)exit).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)shop).BeginInit();
             SuspendLayout();
             // 
             // AutoClicker
@@ -85,21 +87,21 @@
             achievements.TabStop = false;
             achievements.Click += achievements_Click;
             // 
-            // options
+            // about
             // 
-            options.Image = Properties.Resources.OPTIONS;
-            options.Location = new Point(480, 609);
-            options.Name = "options";
-            options.Size = new Size(960, 61);
-            options.SizeMode = PictureBoxSizeMode.CenterImage;
-            options.TabIndex = 4;
-            options.TabStop = false;
-            options.Click += options_Click;
+            about.Image = Properties.Resources.ABOUT;
+            about.Location = new Point(480, 676);
+            about.Name = "about";
+            about.Size = new Size(960, 61);
+            about.SizeMode = PictureBoxSizeMode.CenterImage;
+            about.TabIndex = 4;
+            about.TabStop = false;
+            about.Click += about_Click;
             // 
             // exit
             // 
             exit.Image = Properties.Resources.EXIT;
-            exit.Location = new Point(480, 676);
+            exit.Location = new Point(480, 743);
             exit.Name = "exit";
             exit.Size = new Size(960, 61);
             exit.SizeMode = PictureBoxSizeMode.CenterImage;
@@ -107,14 +109,26 @@
             exit.TabStop = false;
             exit.Click += exit_Click;
             // 
+            // shop
+            // 
+            shop.Image = Properties.Resources.Shop;
+            shop.Location = new Point(480, 609);
+            shop.Name = "shop";
+            shop.Size = new Size(960, 61);
+            shop.SizeMode = PictureBoxSizeMode.CenterImage;
+            shop.TabIndex = 6;
+            shop.TabStop = false;
+            shop.Click += shop_Click;
+            // 
             // Menu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Moccasin;
             ClientSize = new Size(1904, 1041);
+            Controls.Add(shop);
             Controls.Add(exit);
-            Controls.Add(options);
+            Controls.Add(about);
             Controls.Add(achievements);
             Controls.Add(upgrades);
             Controls.Add(play);
@@ -126,8 +140,9 @@
             ((System.ComponentModel.ISupportInitialize)play).EndInit();
             ((System.ComponentModel.ISupportInitialize)upgrades).EndInit();
             ((System.ComponentModel.ISupportInitialize)achievements).EndInit();
-            ((System.ComponentModel.ISupportInitialize)options).EndInit();
+            ((System.ComponentModel.ISupportInitialize)about).EndInit();
             ((System.ComponentModel.ISupportInitialize)exit).EndInit();
+            ((System.ComponentModel.ISupportInitialize)shop).EndInit();
             ResumeLayout(false);
         }
 
@@ -137,7 +152,8 @@
         private PictureBox play;
         private PictureBox upgrades;
         private PictureBox achievements;
-        private PictureBox options;
+        private PictureBox about;
         private PictureBox exit;
+        private PictureBox shop;
     }
 }

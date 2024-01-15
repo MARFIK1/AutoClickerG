@@ -57,19 +57,51 @@ namespace AutoClickerG
                     {
                         int reward = currentAchievement.ClaimReward();
                         button.ForeColor = Color.Green;
-                        MessageBox.Show($"You have claimed {reward} diamonds for this achievement!");
-                    }
-                    else if (currentAchievement.IsCollected)
-                    {
-                        MessageBox.Show("You have already claimed the reward for this achievement.");
-                    }
-                    else
-                    {
-                        MessageBox.Show("You have not yet completed this achievement.");
+
+                        DialogResult result = MessageBox.Show($"You have claimed {reward} {currentAchievement.RewardType.ToLower()} for this achievement!");
+
+                        if (result == DialogResult.OK)
+                        {
+                            if (currentAchievement.RewardType == "Coins")
+                            {
+                                GlobalVariables.CoinBalance += reward;
+                                for (int i = 0; i < 5; i++)
+                                {
+                                    var achievement = GlobalVariables.Achievements[i];
+                                    if (!achievement.IsCollected)
+                                    {
+                                        achievement.AddProgress(reward);
+                                    }
+                                }
+                            }
+                            else if (currentAchievement.RewardType == "Diamonds")
+                            {
+                                GlobalVariables.DiamondBalance += reward;
+                                for (int i = 5; i < 9; i++)
+                                {
+                                    var achievement = GlobalVariables.Achievements[i];
+                                    if (!achievement.IsCollected)
+                                    {
+                                        achievement.AddProgress(reward);
+                                    }
+                                }
+                            }
+                            int collectedAchievementsCount = GlobalVariables.Achievements.Count(a => a.IsCollected);
+                            UpdateAchievementProgress("Achievement Collector", collectedAchievementsCount);
+                        }
                     }
                 };
 
                 this.Controls.Add(button);
+            }
+        }
+
+        void UpdateAchievementProgress(string achievementName, int amount)
+        {
+            var achievement = GlobalVariables.Achievements.FirstOrDefault(a => a.Name == achievementName);
+            if (achievement != null)
+            {
+                achievement.Progress += amount;
             }
         }
 
@@ -88,12 +120,14 @@ namespace AutoClickerG
         public int Goal { get; set; }
         public bool IsCollected { get; set; }
         public int Reward { get; set; }
+        public string RewardType { get; set; }
 
-        public Achievement(string name, int goal, int reward, double initialProgress = 0)
+        public Achievement(string name, int goal, int reward, string rewardtype, double initialProgress = 0)
         {
             Name = name;
             Goal = goal;
             Reward = reward;
+            RewardType = rewardtype;
             Progress = initialProgress;
             IsCollected = false;
         }

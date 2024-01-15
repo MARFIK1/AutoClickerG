@@ -34,10 +34,16 @@ namespace AutoClickerG
             this.Hide();
         }
 
-        private void options_Click(object sender, EventArgs e)
+        private void shop_Click(object sender, EventArgs e)
         {
-            Options options = new Options();
-            options.Show();
+            Shop.Instance.Show();
+            this.Hide();
+        }
+
+        private void about_Click(object sender, EventArgs e)
+        {
+            About about = new About();
+            about.Show();
             this.Hide();
         }
 

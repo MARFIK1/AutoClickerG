@@ -27,10 +27,39 @@ namespace AutoClickerG
         public Play()
         {
             InitializeComponent();
+
+            switch (Shop.SelectedItem)
+            {
+                case "SpinningStrawberry":
+                    CTEM.Image = Properties.Resources.SpinningStrawberry;
+                    break;
+                case "SpinningCube":
+                    CTEM.Image = Properties.Resources.SpinningCube;
+                    break;
+                case "SpinningEarth":
+                    CTEM.Image = Properties.Resources.SpinningEarth;
+                    break;
+                case "SpinningVinyl":
+                    CTEM.Image = Properties.Resources.SpinningVinyl;
+                    break;
+                case "SpinningDonut":
+                    CTEM.Image = Properties.Resources.SpinningDonut;
+                    break;
+                case "SpinningBox":
+                    CTEM.Image = Properties.Resources.SpinningBox;
+                    break;
+                case "SpinningObject":
+                    CTEM.Image = Properties.Resources.SpinningObject;
+                    break;
+                default:
+                    CTEM.Image = Properties.Resources.Coin;
+                    break;
+            }
+
             this.WindowState = FormWindowState.Maximized;
             this.FormBorderStyle = FormBorderStyle.None;
             Coins.Text = ": " + GlobalVariables.CoinBalance.ToString();
-            Diamonds.Text = ": " + GlobalVariables.DiamondBalance.ToString();
+            DiamondBalance.Text = ": " + GlobalVariables.DiamondBalance.ToString();
             Clicks.Text = ": " + GlobalVariables.ClickCounter.ToString();
             ClickMultiplier.Text = "Click Multiplier: " + GlobalVariables.ClickMultiplier.ToString() + "x";
             DiamondMultiplier.Text = "Diamond Multiplier: " + GlobalVariables.DiamondMultiplier.ToString() + "x";
@@ -187,7 +216,7 @@ namespace AutoClickerG
             }
 
             Coins.Text = ": " + GlobalVariables.CoinBalance.ToString();
-            Diamonds.Text = ": " + GlobalVariables.DiamondBalance.ToString();
+            DiamondBalance.Text = ": " + GlobalVariables.DiamondBalance.ToString();
             Clicks.Text = ": " + GlobalVariables.ClickCounter.ToString();
             ClickMultiplier.Text = "Click Multiplier: " + GlobalVariables.ClickMultiplier.ToString() + "x";
 
@@ -199,7 +228,7 @@ namespace AutoClickerG
                 diamondsEarned = GlobalVariables.DiamondMultiplier;
                 GlobalVariables.DiamondBalance += diamondsEarned;
                 GlobalVariables.TotalDiamondsEarned += diamondsEarned;
-                Diamonds.Text = ": " + GlobalVariables.DiamondBalance.ToString();
+                DiamondBalance.Text = ": " + GlobalVariables.DiamondBalance.ToString();
                 for (int i = 5; i < 9; i++)
                 {
                     var achievement = GlobalVariables.Achievements[i];
