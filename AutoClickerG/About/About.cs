@@ -12,6 +12,19 @@ namespace AutoClickerG
 {
     public partial class About : Form
     {
+        private static About _instance;
+
+        public static About Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new About();
+                }
+                return _instance;
+            }
+        }
         public About()
         {
             InitializeComponent();

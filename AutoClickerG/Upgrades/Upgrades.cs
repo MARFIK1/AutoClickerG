@@ -70,6 +70,18 @@ namespace AutoClickerG
                 { DiamondRushIV, 40 },
             };
 
+            foreach (var upgrade in upgradeCosts)
+            {
+                var button = upgrade.Key;
+                var cost = upgrade.Value;
+                var lines = button.Text.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
+                if (lines.Length >= 2 && lines[1].StartsWith("Cost:"))
+                {
+                    lines[1] = $"Cost: {cost}";
+                }
+                button.Text = string.Join("\r\n", lines);
+            }
+
             Dictionary<Button, (Button nextButton, PictureBox nextArrow)> nextUpgrade = new Dictionary<Button, (Button, PictureBox)>
             {
                 { ClickBoostI, (ClickBoostII, UpgradeArrow2) },
@@ -284,81 +296,41 @@ namespace AutoClickerG
                 }
             }
 
-            Image img1 = new Bitmap(UpgradeArrow1.Image);
-            img1.RotateFlip(RotateFlipType.RotateNoneFlipX);
-            UpgradeArrow1.Image = img1;
+            PictureBox[] upgradeArrows = new PictureBox[]
+            {
+                UpgradeArrow1, UpgradeArrow2, UpgradeArrow3, UpgradeArrow7, UpgradeArrow8, UpgradeArrow18, UpgradeArrow26, UpgradeArrow27, UpgradeArrow29
+            };
 
-            Image img2 = new Bitmap(UpgradeArrow2.Image);
-            img2.RotateFlip(RotateFlipType.RotateNoneFlipX);
-            UpgradeArrow2.Image = img2;
+            foreach (var arrow in upgradeArrows)
+            {
+                Image img = new Bitmap(arrow.Image);
+                img.RotateFlip(RotateFlipType.RotateNoneFlipX);
+                arrow.Image = img;
+            }
 
-            Image img3 = new Bitmap(UpgradeArrow3.Image);
-            img3.RotateFlip(RotateFlipType.RotateNoneFlipX);
-            UpgradeArrow3.Image = img3;
+            PictureBox[] upgradeArrows270 = new PictureBox[]
+            {
+                UpgradeArrow4, UpgradeArrow5, UpgradeArrow6, UpgradeArrow9, UpgradeArrow11, UpgradeArrow12, UpgradeArrow17
+            };
 
-            Image img4 = new Bitmap(UpgradeArrow4.Image);
-            img4.RotateFlip(RotateFlipType.Rotate270FlipNone);
-            UpgradeArrow4.Image = img4;
+            foreach (var arrow in upgradeArrows270)
+            {
+                Image img = new Bitmap(arrow.Image);
+                img.RotateFlip(RotateFlipType.Rotate270FlipNone);
+                arrow.Image = img;
+            }
 
-            Image img5 = new Bitmap(UpgradeArrow5.Image);
-            img5.RotateFlip(RotateFlipType.Rotate270FlipNone);
-            UpgradeArrow5.Image = img5;
+            PictureBox[] upgradeArrows90 = new PictureBox[]
+            {
+                UpgradeArrow22, UpgradeArrow23, UpgradeArrow28
+            };
 
-            Image img6 = new Bitmap(UpgradeArrow6.Image);
-            img6.RotateFlip(RotateFlipType.Rotate270FlipNone);
-            UpgradeArrow6.Image = img6;
-
-            Image img7 = new Bitmap(UpgradeArrow7.Image);
-            img7.RotateFlip(RotateFlipType.RotateNoneFlipX);
-            UpgradeArrow7.Image = img7;
-
-            Image img8 = new Bitmap(UpgradeArrow8.Image);
-            img8.RotateFlip(RotateFlipType.RotateNoneFlipX);
-            UpgradeArrow8.Image = img8;
-
-            Image img9 = new Bitmap(UpgradeArrow9.Image);
-            img9.RotateFlip(RotateFlipType.Rotate270FlipNone);
-            UpgradeArrow9.Image = img9;
-
-            Image img11 = new Bitmap(UpgradeArrow11.Image);
-            img11.RotateFlip(RotateFlipType.Rotate270FlipNone);
-            UpgradeArrow11.Image = img11;
-
-            Image img12 = new Bitmap(UpgradeArrow12.Image);
-            img12.RotateFlip(RotateFlipType.Rotate270FlipNone);
-            UpgradeArrow12.Image = img12;
-
-            Image img17 = new Bitmap(UpgradeArrow17.Image);
-            img17.RotateFlip(RotateFlipType.Rotate270FlipNone);
-            UpgradeArrow17.Image = img17;
-
-            Image img18 = new Bitmap(UpgradeArrow18.Image);
-            img18.RotateFlip(RotateFlipType.RotateNoneFlipX);
-            UpgradeArrow18.Image = img18;
-
-            Image img22 = new Bitmap(UpgradeArrow22.Image);
-            img22.RotateFlip(RotateFlipType.Rotate90FlipNone);
-            UpgradeArrow22.Image = img22;
-
-            Image img23 = new Bitmap(UpgradeArrow23.Image);
-            img23.RotateFlip(RotateFlipType.Rotate90FlipNone);
-            UpgradeArrow23.Image = img23;
-
-            Image img26 = new Bitmap(UpgradeArrow26.Image);
-            img26.RotateFlip(RotateFlipType.RotateNoneFlipX);
-            UpgradeArrow26.Image = img26;
-
-            Image img27 = new Bitmap(UpgradeArrow27.Image);
-            img27.RotateFlip(RotateFlipType.RotateNoneFlipX);
-            UpgradeArrow27.Image = img27;
-
-            Image img28 = new Bitmap(UpgradeArrow28.Image);
-            img28.RotateFlip(RotateFlipType.Rotate90FlipNone);
-            UpgradeArrow28.Image = img28;
-
-            Image img29 = new Bitmap(UpgradeArrow29.Image);
-            img29.RotateFlip(RotateFlipType.RotateNoneFlipX);
-            UpgradeArrow29.Image = img29;
+            foreach (var arrow in upgradeArrows90)
+            {
+                Image img = new Bitmap(arrow.Image);
+                img.RotateFlip(RotateFlipType.Rotate90FlipNone);
+                arrow.Image = img;
+            }
         }
         private void BackToMenu_Click(object sender, EventArgs e)
         {

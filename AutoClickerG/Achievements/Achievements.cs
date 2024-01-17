@@ -12,6 +12,19 @@ namespace AutoClickerG
 {
     public partial class Achievements : Form
     {
+        private static Achievements _instance;
+
+        public static Achievements Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new Achievements();
+                }
+                return _instance;
+            }
+        }
         public Achievements()
         {
             InitializeComponent();

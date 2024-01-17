@@ -145,7 +145,7 @@
             ClickBoostI.Name = "ClickBoostI";
             ClickBoostI.Size = new Size(170, 108);
             ClickBoostI.TabIndex = 1;
-            ClickBoostI.Text = "Click Boost I\r\nCost: 100\r\nReward: Increases click power by 1.25x\r\n";
+            ClickBoostI.Text = "Click Boost I\r\nCost:\r\nReward: Increases click power by 1.25x\r\n";
             ClickBoostI.UseVisualStyleBackColor = false;
             // 
             // UpgradeArrow2
@@ -167,7 +167,7 @@
             ClickBoostII.Name = "ClickBoostII";
             ClickBoostII.Size = new Size(170, 108);
             ClickBoostII.TabIndex = 3;
-            ClickBoostII.Text = "Click Boost II\r\nCost: 200\r\nReward: Increases click power by 1.5x\r\n";
+            ClickBoostII.Text = "Click Boost II\r\nCost:\r\nReward: Increases click power by 1.5x\r\n";
             ClickBoostII.UseVisualStyleBackColor = false;
             ClickBoostII.Visible = false;
             // 
@@ -190,7 +190,7 @@
             ClickBoostIII.Name = "ClickBoostIII";
             ClickBoostIII.Size = new Size(170, 108);
             ClickBoostIII.TabIndex = 6;
-            ClickBoostIII.Text = "Click Boost III\r\nCost: 500\r\nReward: Increases click power by 2x\r\n";
+            ClickBoostIII.Text = "Click Boost III\r\nCost:\r\nReward: Increases click power by 2x\r\n";
             ClickBoostIII.UseVisualStyleBackColor = false;
             ClickBoostIII.Visible = false;
             // 
@@ -213,7 +213,7 @@
             ClickBoostIV.Name = "ClickBoostIV";
             ClickBoostIV.Size = new Size(170, 108);
             ClickBoostIV.TabIndex = 8;
-            ClickBoostIV.Text = "Click Boost IV\r\nCost: 1000\r\nReward: Increases click power by 3x\r\n";
+            ClickBoostIV.Text = "Click Boost IV\r\nCost:\r\nReward: Increases click power by 3x\r\n";
             ClickBoostIV.UseVisualStyleBackColor = false;
             ClickBoostIV.Visible = false;
             // 
@@ -236,7 +236,7 @@
             ClickBoostV.Name = "ClickBoostV";
             ClickBoostV.Size = new Size(170, 108);
             ClickBoostV.TabIndex = 10;
-            ClickBoostV.Text = "Click Boost V\r\nCost: 5000\r\nReward: Increases click power by 4x\r\n";
+            ClickBoostV.Text = "Click Boost V\r\nCost:\r\nReward: Increases click power by 4x\r\n";
             ClickBoostV.UseVisualStyleBackColor = false;
             ClickBoostV.Visible = false;
             // 
@@ -258,7 +258,7 @@
             AutoClickerI.Name = "AutoClickerI";
             AutoClickerI.Size = new Size(170, 108);
             AutoClickerI.TabIndex = 14;
-            AutoClickerI.Text = "Auto Clicker I\r\nCost: 500\r\nReward: Earn 1 coin for every 5 seconds\r\n";
+            AutoClickerI.Text = "Auto Clicker I\r\nCost:\r\nReward: Earn 1 coin for every 5 seconds\r\n";
             AutoClickerI.UseVisualStyleBackColor = false;
             // 
             // UpgradeArrow7
@@ -280,7 +280,7 @@
             AutoClickerII.Name = "AutoClickerII";
             AutoClickerII.Size = new Size(170, 108);
             AutoClickerII.TabIndex = 15;
-            AutoClickerII.Text = "Auto Clicker II\r\nCost: 1000\r\nReward: Earn 5 coin for every 5 seconds\r\n";
+            AutoClickerII.Text = "Auto Clicker II\r\nCost:\r\nReward: Earn 5 coin for every 5 seconds\r\n";
             AutoClickerII.UseVisualStyleBackColor = false;
             AutoClickerII.Visible = false;
             // 
@@ -303,7 +303,7 @@
             AutoClickerIII.Name = "AutoClickerIII";
             AutoClickerIII.Size = new Size(170, 108);
             AutoClickerIII.TabIndex = 18;
-            AutoClickerIII.Text = "Auto Clicker III\r\nCost: 2000\r\nReward: Earn 10 coin for every 5 seconds\r\n";
+            AutoClickerIII.Text = "Auto Clicker III\r\nCost:\r\nReward: Earn 10 coin for every 5 seconds\r\n";
             AutoClickerIII.UseVisualStyleBackColor = false;
             AutoClickerIII.Visible = false;
             // 
@@ -326,7 +326,7 @@
             AutoClickerIV.Name = "AutoClickerIV";
             AutoClickerIV.Size = new Size(170, 108);
             AutoClickerIV.TabIndex = 20;
-            AutoClickerIV.Text = "Auto Clicker IV\r\nCost: 5000\r\nReward: Earn 25 coin for every 5 seconds\r\n";
+            AutoClickerIV.Text = "Auto Clicker IV\r\nCost:\r\nReward: Earn 25 coin for every 5 seconds\r\n";
             AutoClickerIV.UseVisualStyleBackColor = false;
             AutoClickerIV.Visible = false;
             // 
@@ -349,7 +349,7 @@
             AutoClickerV.Name = "AutoClickerV";
             AutoClickerV.Size = new Size(170, 108);
             AutoClickerV.TabIndex = 22;
-            AutoClickerV.Text = "Auto Clicker V\r\nCost: 10000\r\nReward: Earn 50 coin for every 5 seconds\r\n";
+            AutoClickerV.Text = "Auto Clicker V\r\nCost:\r\nReward: Earn 50 coin for every 5 seconds\r\n";
             AutoClickerV.UseVisualStyleBackColor = false;
             AutoClickerV.Visible = false;
             // 
@@ -371,7 +371,7 @@
             ClickComboI.Name = "ClickComboI";
             ClickComboI.Size = new Size(256, 108);
             ClickComboI.TabIndex = 23;
-            ClickComboI.Text = "Click Combo I\r\nCost: 750\r\nReward: Each click without interruption, increase the click force by 1x, up to a maximum of 1.5x.\r\n";
+            ClickComboI.Text = "Click Combo I\r\nCost:\r\nReward: Each click without interruption, increase the click force by 1x, up to a maximum of 1.5x.\r\n";
             ClickComboI.UseVisualStyleBackColor = false;
             // 
             // UpgradeArrow12
@@ -393,7 +393,7 @@
             ClickComboII.Name = "ClickComboII";
             ClickComboII.Size = new Size(256, 108);
             ClickComboII.TabIndex = 25;
-            ClickComboII.Text = "Click Combo II\r\nCost: 1250\r\nReward: Each click without interruption, increase the click force by 1x, up to a maximum of 2x.\r\n";
+            ClickComboII.Text = "Click Combo II\r\nCost:\r\nReward: Each click without interruption, increase the click force by 1x, up to a maximum of 2x.\r\n";
             ClickComboII.UseVisualStyleBackColor = false;
             ClickComboII.Visible = false;
             // 
@@ -416,7 +416,7 @@
             ClickComboIII.Name = "ClickComboIII";
             ClickComboIII.Size = new Size(256, 108);
             ClickComboIII.TabIndex = 27;
-            ClickComboIII.Text = "Click Combo III\r\nCost: 5000\r\nReward: Each click without interruption, increase the click force by 1x, up to a maximum of 3x.\r\n";
+            ClickComboIII.Text = "Click Combo III\r\nCost:\r\nReward: Each click without interruption, increase the click force by 1x, up to a maximum of 3x.\r\n";
             ClickComboIII.UseVisualStyleBackColor = false;
             ClickComboIII.Visible = false;
             // 
@@ -438,7 +438,7 @@
             LuckyDiamondsI.Name = "LuckyDiamondsI";
             LuckyDiamondsI.Size = new Size(170, 108);
             LuckyDiamondsI.TabIndex = 29;
-            LuckyDiamondsI.Text = "Lucky Diamonds I\r\nCost: 750\r\nReward: Increase your chance of finding diamonds to 2%\r\n";
+            LuckyDiamondsI.Text = "Lucky Diamonds I\r\nCost:\r\nReward: Increase your chance of finding diamonds to 2%\r\n";
             LuckyDiamondsI.UseVisualStyleBackColor = false;
             // 
             // UpgradeArrow15
@@ -460,7 +460,7 @@
             LuckyDiamondsII.Name = "LuckyDiamondsII";
             LuckyDiamondsII.Size = new Size(170, 108);
             LuckyDiamondsII.TabIndex = 31;
-            LuckyDiamondsII.Text = "Lucky Diamonds II\r\nCost: 1750\r\nReward: Increase your chance of finding diamonds to 3%\r\n";
+            LuckyDiamondsII.Text = "Lucky Diamonds II\r\nCost:\r\nReward: Increase your chance of finding diamonds to 3%\r\n";
             LuckyDiamondsII.UseVisualStyleBackColor = false;
             LuckyDiamondsII.Visible = false;
             // 
@@ -483,7 +483,7 @@
             LuckyDiamondsIII.Name = "LuckyDiamondsIII";
             LuckyDiamondsIII.Size = new Size(170, 108);
             LuckyDiamondsIII.TabIndex = 33;
-            LuckyDiamondsIII.Text = "Lucky Diamonds III\r\nCost: 3000\r\nReward: Increase your chance of finding diamonds to 4%\r\n";
+            LuckyDiamondsIII.Text = "Lucky Diamonds III\r\nCost:\r\nReward: Increase your chance of finding diamonds to 4%\r\n";
             LuckyDiamondsIII.UseVisualStyleBackColor = false;
             LuckyDiamondsIII.Visible = false;
             // 
@@ -506,7 +506,7 @@
             LuckyDiamondsIV.Name = "LuckyDiamondsIV";
             LuckyDiamondsIV.Size = new Size(170, 108);
             LuckyDiamondsIV.TabIndex = 35;
-            LuckyDiamondsIV.Text = "Lucky Diamonds IV\r\nCost: 5000\r\nReward: Increase your chance of finding diamonds to 5%\r\n";
+            LuckyDiamondsIV.Text = "Lucky Diamonds IV\r\nCost:\r\nReward: Increase your chance of finding diamonds to 5%\r\n";
             LuckyDiamondsIV.UseVisualStyleBackColor = false;
             LuckyDiamondsIV.Visible = false;
             // 
@@ -529,7 +529,7 @@
             LuckyDiamondsV.Name = "LuckyDiamondsV";
             LuckyDiamondsV.Size = new Size(170, 108);
             LuckyDiamondsV.TabIndex = 37;
-            LuckyDiamondsV.Text = "Lucky Diamonds V\r\nCost: 7500\r\nReward: Increase your chance of finding diamonds to 10%\r\n";
+            LuckyDiamondsV.Text = "Lucky Diamonds V\r\nCost:\r\nReward: Increase your chance of finding diamonds to 10%\r\n";
             LuckyDiamondsV.UseVisualStyleBackColor = false;
             LuckyDiamondsV.Visible = false;
             // 
@@ -551,7 +551,7 @@
             DiamondBoostI.Name = "DiamondBoostI";
             DiamondBoostI.Size = new Size(170, 108);
             DiamondBoostI.TabIndex = 39;
-            DiamondBoostI.Text = "Diamond Boost I\r\nCost: 250\r\nReward: Increases the diamond multiplier by 2x\r\n";
+            DiamondBoostI.Text = "Diamond Boost I\r\nCost:\r\nReward: Increases the diamond multiplier by 2x\r\n";
             DiamondBoostI.UseVisualStyleBackColor = false;
             // 
             // UpgradeArrow20
@@ -573,7 +573,7 @@
             DiamondBoostII.Name = "DiamondBoostII";
             DiamondBoostII.Size = new Size(170, 108);
             DiamondBoostII.TabIndex = 41;
-            DiamondBoostII.Text = "Diamond Boost II\r\nCost: 600\r\nReward: Increases the diamond multiplier by 3x\r\n";
+            DiamondBoostII.Text = "Diamond Boost II\r\nCost:\r\nReward: Increases the diamond multiplier by 3x\r\n";
             DiamondBoostII.UseVisualStyleBackColor = false;
             DiamondBoostII.Visible = false;
             // 
@@ -596,7 +596,7 @@
             DiamondBoostIII.Name = "DiamondBoostIII";
             DiamondBoostIII.Size = new Size(170, 108);
             DiamondBoostIII.TabIndex = 43;
-            DiamondBoostIII.Text = "Diamond Boost III\r\nCost: 1000\r\nReward: Increases the diamond multiplier by 4x\r\n";
+            DiamondBoostIII.Text = "Diamond Boost III\r\nCost:\r\nReward: Increases the diamond multiplier by 4x\r\n";
             DiamondBoostIII.UseVisualStyleBackColor = false;
             DiamondBoostIII.Visible = false;
             // 
@@ -619,7 +619,7 @@
             DiamondBoostIV.Name = "DiamondBoostIV";
             DiamondBoostIV.Size = new Size(170, 108);
             DiamondBoostIV.TabIndex = 45;
-            DiamondBoostIV.Text = "Diamond Boost IV\r\nCost: 3000\r\nReward: Increases the diamond multiplier by 5x\r\n";
+            DiamondBoostIV.Text = "Diamond Boost IV\r\nCost:\r\nReward: Increases the diamond multiplier by 5x\r\n";
             DiamondBoostIV.UseVisualStyleBackColor = false;
             DiamondBoostIV.Visible = false;
             // 
@@ -641,7 +641,7 @@
             BalanceDoublerI.Name = "BalanceDoublerI";
             BalanceDoublerI.Size = new Size(256, 108);
             BalanceDoublerI.TabIndex = 49;
-            BalanceDoublerI.Text = "Balance Doubler I\r\nCost: 3000\r\nReward: Doubles the amount of coins and diamonds you earn for each click for 3 seconds\r\n";
+            BalanceDoublerI.Text = "Balance Doubler I\r\nCost:\r\nReward: Doubles the amount of coins and diamonds you earn for each click for 3 seconds\r\n";
             BalanceDoublerI.UseVisualStyleBackColor = false;
             // 
             // UpgradeArrow24
@@ -663,7 +663,7 @@
             BalanceDoublerII.Name = "BalanceDoublerII";
             BalanceDoublerII.Size = new Size(256, 108);
             BalanceDoublerII.TabIndex = 65;
-            BalanceDoublerII.Text = "Balance Doubler II\r\nCost: 5000\r\nReward: Doubles the amount of coins and diamonds you earn for each click for 5 seconds\r\n";
+            BalanceDoublerII.Text = "Balance Doubler II\r\nCost:\r\nReward: Doubles the amount of coins and diamonds you earn for each click for 5 seconds\r\n";
             BalanceDoublerII.UseVisualStyleBackColor = false;
             BalanceDoublerII.Visible = false;
             // 
@@ -686,7 +686,7 @@
             BalanceDoublerIII.Name = "BalanceDoublerIII";
             BalanceDoublerIII.Size = new Size(256, 108);
             BalanceDoublerIII.TabIndex = 55;
-            BalanceDoublerIII.Text = "Balance Doubler III\r\nCost: 7000\r\nReward: Doubles the amount of coins and diamonds you earn for each click for 7 seconds\r\n";
+            BalanceDoublerIII.Text = "Balance Doubler III\r\nCost:\r\nReward: Doubles the amount of coins and diamonds you earn for each click for 7 seconds\r\n";
             BalanceDoublerIII.UseVisualStyleBackColor = false;
             BalanceDoublerIII.Visible = false;
             // 
@@ -708,7 +708,7 @@
             DiamondRushI.Name = "DiamondRushI";
             DiamondRushI.Size = new Size(170, 108);
             DiamondRushI.TabIndex = 59;
-            DiamondRushI.Text = "Diamond Rush I\r\nCost: 1500\r\nReward: For 3 seconds, every click generates a diamond\r\n";
+            DiamondRushI.Text = "Diamond Rush I\r\nCost:\r\nReward: For 3 seconds, every click generates a diamond\r\n";
             DiamondRushI.UseVisualStyleBackColor = false;
             // 
             // UpgradeArrow27
@@ -730,7 +730,7 @@
             DiamondRushII.Name = "DiamondRushII";
             DiamondRushII.Size = new Size(170, 108);
             DiamondRushII.TabIndex = 61;
-            DiamondRushII.Text = "Diamond Rush II\r\nCost: 3000\r\nReward: For 5 seconds, every click generates a diamond\r\n";
+            DiamondRushII.Text = "Diamond Rush II\r\nCost:\r\nReward: For 5 seconds, every click generates a diamond\r\n";
             DiamondRushII.UseVisualStyleBackColor = false;
             DiamondRushII.Visible = false;
             // 
@@ -753,7 +753,7 @@
             DiamondRushIII.Name = "DiamondRushIII";
             DiamondRushIII.Size = new Size(170, 108);
             DiamondRushIII.TabIndex = 63;
-            DiamondRushIII.Text = "Diamond Rush III\r\nCost: 5000\r\nReward: For 7 seconds, every click generates a diamond\r\n";
+            DiamondRushIII.Text = "Diamond Rush III\r\nCost:\r\nReward: For 7 seconds, every click generates a diamond\r\n";
             DiamondRushIII.UseVisualStyleBackColor = false;
             DiamondRushIII.Visible = false;
             // 
@@ -776,7 +776,7 @@
             DiamondRushIV.Name = "DiamondRushIV";
             DiamondRushIV.Size = new Size(170, 108);
             DiamondRushIV.TabIndex = 72;
-            DiamondRushIV.Text = "Diamond Rush IV\r\nCost: 10000\r\nReward: For 10 seconds, every click generates a diamond\r\n";
+            DiamondRushIV.Text = "Diamond Rush IV\r\nCost:\r\nReward: For 10 seconds, every click generates a diamond\r\n";
             DiamondRushIV.UseVisualStyleBackColor = false;
             DiamondRushIV.Visible = false;
             // 
