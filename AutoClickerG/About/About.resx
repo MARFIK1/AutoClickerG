@@ -117,4 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="InformationAboutGame.Text" xml:space="preserve">
+    <value>The core gameplay revolves around earning coins and diamonds, and purchasing upgrades to 
+increase your yield of these resources.
+
+As a player, you start with a 1x multiplier and a 1% chance of hitting a diamond with each click.
+
+This game features a progression system with 29 upgrades, each unlocking only after the purchase of the preceding level. 
+This means that to see and purchase a level two upgrade, you must first buy the level one upgrade. 
+
+The game also includes achievements across various categories, with a total of 29 to unlock. 
+
+Diamonds can be spent in the shop on cosmetic items that change the object you click to earn coins and diamonds.
+
+The goal of the game is to maximize your earnings, strategically purchase upgrades, and unlock achievements, 
+all while enjoying the cosmetic customization options available in the shop.
+
+</value>
+  </data>
 </root>

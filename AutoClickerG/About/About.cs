@@ -28,6 +28,16 @@ namespace AutoClickerG
         public About()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
+            this.FormBorderStyle = FormBorderStyle.None;
+            BackToMenu.Click += BackToMenu_Click;
+        }
+
+        private void BackToMenu_Click(object sender, EventArgs e)
+        {
+            Menu menu = new Menu();
+            menu.Show();
+            this.Hide();
         }
     }
 }

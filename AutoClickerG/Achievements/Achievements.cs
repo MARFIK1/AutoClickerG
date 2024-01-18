@@ -144,7 +144,8 @@ namespace AutoClickerG
 
         public void AddProgress(double amount)
         {
-            Progress = Math.Truncate((Progress + amount) * 10000) / 10000;
+            Progress += amount;
+            Progress = Math.Round(Progress * 100) / 100;
             Progress = Math.Min(Progress, Goal);
             UpdateButton();
         }

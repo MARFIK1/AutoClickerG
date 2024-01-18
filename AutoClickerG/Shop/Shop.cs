@@ -104,7 +104,7 @@ namespace AutoClickerG
             }
             else
             {
-                MessageBox.Show($"You do not have enough diamonds to buy {itemId}!");
+                MessageBox.Show($"You do not have enough diamonds to buy {itemId}!", "Refusal to purchase", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

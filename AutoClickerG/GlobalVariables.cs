@@ -9,7 +9,7 @@ public static class GlobalVariables
         get { return coinBalance; }
         set
         {
-            coinBalance = Math.Truncate(value * 10000) / 10000;
+            coinBalance = Math.Round(value * 100) / 100;
             OnCoinBalanceChanged?.Invoke(coinBalance);
         }
     }
