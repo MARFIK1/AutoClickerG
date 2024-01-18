@@ -160,11 +160,11 @@ namespace AutoClickerG
                 {
                     if (upgradesPurchased.ContainsKey(localUpgrade.Key) && upgradesPurchased[localUpgrade.Key])
                     {
-                        MessageBox.Show("Już kupiłeś te ulepszenie.", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("You have already purchased this upgrade.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else if (GlobalVariables.CoinBalance >= localUpgrade.Value)
                     {
-                        DialogResult dialogResult = MessageBox.Show("Czy na pewno chcesz zakupić to ulepszenie?", "Potwierdzenie zakupu", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        DialogResult dialogResult = MessageBox.Show("Are you sure you want to buy to upgrade?", "Purchase confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                         if (dialogResult == DialogResult.Yes)
                         {
                             GlobalVariables.CoinBalance -= localUpgrade.Value;
@@ -245,7 +245,7 @@ namespace AutoClickerG
                     }
                     else
                     {
-                        MessageBox.Show("Nie masz wystarczającej liczby monet na zakup tego ulepszenia.", "Odmowa zakupu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("You do not have enough coins to purchase this upgrade.", "Refusal to purchase", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 };
             }
